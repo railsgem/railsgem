@@ -147,7 +147,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="联系人列表" id="432-yF-UzX">
-                        <barButtonItem key="leftBarButtonItem" title="注销" id="gqC-kc-mbY"/>
+                        <barButtonItem key="leftBarButtonItem" title="注销" id="gqC-kc-mbY">
+                            <connections>
+                                <action selector="Logout:" destination="hsw-mz-oq1" id="5AI-ZT-y4D"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QF3-wn-jOB"/>
                     </navigationItem>
                 </tableViewController>

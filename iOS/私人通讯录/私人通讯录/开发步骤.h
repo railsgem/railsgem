@@ -24,3 +24,4 @@
     12.2 删除没用的方法代码：initWithNibName，didReceiveMemoryWarning
     12.3 实现监听文本框的改变：textChange()
     12.4 实现监听“记住密码”与“自动登录” UISwitch控件的逻辑方法
+13. 实现注销功能
