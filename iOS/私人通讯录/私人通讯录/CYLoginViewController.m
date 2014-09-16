@@ -9,41 +9,62 @@
 #import "CYLoginViewController.h"
 
 @interface CYLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *accountField;
+@property (weak, nonatomic) IBOutlet UITextField *pwdField;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UISwitch *rmbPwdSwitch;
+- (IBAction)rmbPwdChange;
+@property (weak, nonatomic) IBOutlet UISwitch *autoLoginSwitch;
+- (IBAction)autoLoginChange;
 
 @end
 
 @implementation CYLoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    
+    //监听通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.accountField];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.pwdField];
+    
 
-- (void)didReceiveMemoryWarning
+}
+/**
+ * 移除监听
+ */
+-(void) dealloc
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-/*
-#pragma mark - Navigation
+/**
+ *  文本框的文字发生改变的时候调用到
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)textChange
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.loginBtn.enabled = (self.accountField.text.length && self.pwdField.text.length );
 }
-*/
 
+/**
+ *  记住密码 的开关的状态改变时调用
+ */
+- (IBAction)rmbPwdChange{
+    //取消记住密码
+    if (self.rmbPwdSwitch.isOn == NO) {
+        self.autoLoginSwitch.on = NO;
+    }
+}
+
+/**
+ *  自动登录的开关状态改变就会自动调用
+ */
+- (IBAction)autoLoginChange {
+    //打开自动登录
+    if (self.autoLoginSwitch.isOn) {
+        self.rmbPwdSwitch.on = YES;
+    }
+}
 @end

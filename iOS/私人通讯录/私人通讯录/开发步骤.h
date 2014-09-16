@@ -20,4 +20,7 @@
     添加其他控件
     *注意：NavigationController连线需要右击选择root View Controller
 12.实现CYLoginViewController
-    12.1
+    12.1 添加控件outlet
+    12.2 删除没用的方法代码：initWithNibName，didReceiveMemoryWarning
+    12.3 实现监听文本框的改变：textChange()
+    12.4 实现监听“记住密码”与“自动登录” UISwitch控件的逻辑方法
