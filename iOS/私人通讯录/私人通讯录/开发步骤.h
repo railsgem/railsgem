@@ -15,6 +15,9 @@
     功能：编辑练习人
 10.删除storyboard的tableviewController
 11.在storyboard上添加一个UIViewController,因为首页CYLoginViewController继承自 UIViewController
-    配置UIViewController custom class 为CYLoginViewController,拖线导航（push方式）
+    配置UIViewController custom class 为CYLoginViewController,拖线导航（非push方式）
     添加首页标题文字：欢迎使用
     添加其他控件
+    *注意：NavigationController连线需要右击选择root View Controller
+12.实现CYLoginViewController
+    12.1
