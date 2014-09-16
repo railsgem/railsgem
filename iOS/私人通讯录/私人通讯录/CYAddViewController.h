@@ -1,5 +1,5 @@
 //
-//  CYViewController.h
+//  CYAddViewController.h
 //  私人通讯录
 //
 //  Created by Rails Chen on 14-9-16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYViewController : UIViewController
+@interface CYAddViewController : UIViewController
 
 @end

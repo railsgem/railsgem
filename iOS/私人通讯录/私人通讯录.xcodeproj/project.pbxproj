@@ -14,14 +14,16 @@
 		69D0B38819C825E00087E1B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B38719C825E00087E1B6 /* main.m */; };
 		69D0B38C19C825E00087E1B6 /* CYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B38B19C825E00087E1B6 /* CYAppDelegate.m */; };
 		69D0B38F19C825E00087E1B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D0B38D19C825E00087E1B6 /* Main.storyboard */; };
-		69D0B39219C825E00087E1B6 /* CYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B39119C825E00087E1B6 /* CYViewController.m */; };
 		69D0B39419C825E00087E1B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D0B39319C825E00087E1B6 /* Images.xcassets */; };
 		69D0B39B19C825E00087E1B6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D0B39A19C825E00087E1B6 /* XCTest.framework */; };
 		69D0B39C19C825E00087E1B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D0B37B19C825E00087E1B6 /* Foundation.framework */; };
 		69D0B39D19C825E00087E1B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D0B37F19C825E00087E1B6 /* UIKit.framework */; };
 		69D0B3A519C825E00087E1B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69D0B3A319C825E00087E1B6 /* InfoPlist.strings */; };
 		69D0B3A719C825E00087E1B6 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B3A619C825E00087E1B6 /* _____Tests.m */; };
-		69D0B3B119C827A10087E1B6 /* 开发步骤 in Resources */ = {isa = PBXBuildFile; fileRef = 69D0B3B019C827A10087E1B6 /* 开发步骤 */; };
+		69D0B3B719C82E050087E1B6 /* CYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B3B619C82E050087E1B6 /* CYLoginViewController.m */; };
+		69D0B3BC19C82F160087E1B6 /* CYContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B3BB19C82F160087E1B6 /* CYContactsTableViewController.m */; };
+		69D0B3BF19C82FE90087E1B6 /* CYAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B3BE19C82FE90087E1B6 /* CYAddViewController.m */; };
+		69D0B3C219C830490087E1B6 /* CYEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D0B3C119C830490087E1B6 /* CYEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,15 +48,21 @@
 		69D0B38A19C825E00087E1B6 /* CYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYAppDelegate.h; sourceTree = "<group>"; };
 		69D0B38B19C825E00087E1B6 /* CYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYAppDelegate.m; sourceTree = "<group>"; };
 		69D0B38E19C825E00087E1B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		69D0B39019C825E00087E1B6 /* CYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYViewController.h; sourceTree = "<group>"; };
-		69D0B39119C825E00087E1B6 /* CYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYViewController.m; sourceTree = "<group>"; };
 		69D0B39319C825E00087E1B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69D0B39919C825E00087E1B6 /* 私人通讯录Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "私人通讯录Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D0B39A19C825E00087E1B6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		69D0B3A219C825E00087E1B6 /* 私人通讯录Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "私人通讯录Tests-Info.plist"; sourceTree = "<group>"; };
 		69D0B3A419C825E00087E1B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		69D0B3A619C825E00087E1B6 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
-		69D0B3B019C827A10087E1B6 /* 开发步骤 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "开发步骤"; sourceTree = "<group>"; };
+		69D0B3B219C82A280087E1B6 /* 开发步骤.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "开发步骤.h"; sourceTree = "<group>"; };
+		69D0B3B519C82E050087E1B6 /* CYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLoginViewController.h; sourceTree = "<group>"; };
+		69D0B3B619C82E050087E1B6 /* CYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLoginViewController.m; sourceTree = "<group>"; };
+		69D0B3BA19C82F160087E1B6 /* CYContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYContactsTableViewController.h; sourceTree = "<group>"; };
+		69D0B3BB19C82F160087E1B6 /* CYContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYContactsTableViewController.m; sourceTree = "<group>"; };
+		69D0B3BD19C82FE90087E1B6 /* CYAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYAddViewController.h; sourceTree = "<group>"; };
+		69D0B3BE19C82FE90087E1B6 /* CYAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYAddViewController.m; sourceTree = "<group>"; };
+		69D0B3C019C830490087E1B6 /* CYEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYEditViewController.h; sourceTree = "<group>"; };
+		69D0B3C119C830490087E1B6 /* CYEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +122,9 @@
 		69D0B38119C825E00087E1B6 /* 私人通讯录 */ = {
 			isa = PBXGroup;
 			children = (
+				69D0B3B319C82D950087E1B6 /* Classes */,
 				69D0B38A19C825E00087E1B6 /* CYAppDelegate.h */,
 				69D0B38B19C825E00087E1B6 /* CYAppDelegate.m */,
-				69D0B38D19C825E00087E1B6 /* Main.storyboard */,
-				69D0B39019C825E00087E1B6 /* CYViewController.h */,
-				69D0B39119C825E00087E1B6 /* CYViewController.m */,
-				69D0B39319C825E00087E1B6 /* Images.xcassets */,
 				69D0B38219C825E00087E1B6 /* Supporting Files */,
 			);
 			path = "私人通讯录";
@@ -128,11 +133,13 @@
 		69D0B38219C825E00087E1B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69D0B38D19C825E00087E1B6 /* Main.storyboard */,
+				69D0B39319C825E00087E1B6 /* Images.xcassets */,
 				69D0B38319C825E00087E1B6 /* 私人通讯录-Info.plist */,
 				69D0B38419C825E00087E1B6 /* InfoPlist.strings */,
 				69D0B38719C825E00087E1B6 /* main.m */,
 				69D0B38919C825E00087E1B6 /* 私人通讯录-Prefix.pch */,
-				69D0B3B019C827A10087E1B6 /* 开发步骤 */,
+				69D0B3B219C82A280087E1B6 /* 开发步骤.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +160,29 @@
 				69D0B3A319C825E00087E1B6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69D0B3B319C82D950087E1B6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				69D0B3B419C82D9E0087E1B6 /* Controller */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		69D0B3B419C82D9E0087E1B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69D0B3B519C82E050087E1B6 /* CYLoginViewController.h */,
+				69D0B3B619C82E050087E1B6 /* CYLoginViewController.m */,
+				69D0B3BA19C82F160087E1B6 /* CYContactsTableViewController.h */,
+				69D0B3BB19C82F160087E1B6 /* CYContactsTableViewController.m */,
+				69D0B3BD19C82FE90087E1B6 /* CYAddViewController.h */,
+				69D0B3BE19C82FE90087E1B6 /* CYAddViewController.m */,
+				69D0B3C019C830490087E1B6 /* CYEditViewController.h */,
+				69D0B3C119C830490087E1B6 /* CYEditViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +264,6 @@
 			files = (
 				69D0B39419C825E00087E1B6 /* Images.xcassets in Resources */,
 				69D0B38619C825E00087E1B6 /* InfoPlist.strings in Resources */,
-				69D0B3B119C827A10087E1B6 /* 开发步骤 in Resources */,
 				69D0B38F19C825E00087E1B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D0B3C219C830490087E1B6 /* CYEditViewController.m in Sources */,
+				69D0B3BC19C82F160087E1B6 /* CYContactsTableViewController.m in Sources */,
 				69D0B38C19C825E00087E1B6 /* CYAppDelegate.m in Sources */,
+				69D0B3B719C82E050087E1B6 /* CYLoginViewController.m in Sources */,
 				69D0B38819C825E00087E1B6 /* main.m in Sources */,
-				69D0B39219C825E00087E1B6 /* CYViewController.m in Sources */,
+				69D0B3BF19C82FE90087E1B6 /* CYAddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
