@@ -89,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69B6940319C9188800A35128 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				69D0B38A19C825E00087E1B6 /* CYAppDelegate.h */,
+				69D0B38B19C825E00087E1B6 /* CYAppDelegate.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		69D0B36F19C825E00087E1B6 = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				69D0B3B319C82D950087E1B6 /* Classes */,
-				69D0B38A19C825E00087E1B6 /* CYAppDelegate.h */,
-				69D0B38B19C825E00087E1B6 /* CYAppDelegate.m */,
 				69D0B38219C825E00087E1B6 /* Supporting Files */,
 			);
 			path = "私人通讯录";
@@ -165,6 +172,7 @@
 		69D0B3B319C82D950087E1B6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69B6940319C9188800A35128 /* Other */,
 				69D0B3B419C82D9E0087E1B6 /* Controller */,
 			);
 			name = Classes;
@@ -493,6 +501,7 @@
 				69D0B3AC19C825E00087E1B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69D0B3AD19C825E00087E1B6 /* Build configuration list for PBXNativeTarget "私人通讯录Tests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +510,7 @@
 				69D0B3AF19C825E00087E1B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
