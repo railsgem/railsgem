@@ -17,9 +17,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-5f-rtr">
-                                <rect key="frame" x="0.0" y="76" width="320" height="492"/>
+                                <rect key="frame" x="0.0" y="76" width="320" height="441"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="SKb-fj-h8o"/>
+                                </connections>
                             </webView>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-ut-1F8">
                                 <rect key="frame" x="0.0" y="32" width="320" height="44"/>
@@ -29,10 +32,29 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="aaj-Hk-NAU"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ho0-oH-sF1">
+                                <rect key="frame" x="0.0" y="518" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="后退" id="phT-gk-Qfh">
+                                        <connections>
+                                            <action selector="goBack" destination="Kdd-5f-rtr" id="dtZ-3X-bTn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5HK-Rc-RNm"/>
+                                    <barButtonItem title="前进" id="1cC-DI-o9v">
+                                        <connections>
+                                            <action selector="goForward" destination="Kdd-5f-rtr" id="68d-xA-wGJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="phT-gk-Qfh" id="cE8-hj-ufC"/>
+                        <outlet property="forwardButton" destination="1cC-DI-o9v" id="7bw-QD-iTn"/>
                         <outlet property="webView" destination="Kdd-5f-rtr" id="0UY-uF-C8Q"/>
                     </connections>
                 </viewController>
