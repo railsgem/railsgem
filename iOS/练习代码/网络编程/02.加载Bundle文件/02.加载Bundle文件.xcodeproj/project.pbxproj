@@ -21,6 +21,8 @@
 		69CDD5F719D16FC80006A94C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CDD5D919D16FC70006A94C /* UIKit.framework */; };
 		69CDD5FF19D16FC80006A94C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CDD5FD19D16FC80006A94C /* InfoPlist.strings */; };
 		69CDD60119D16FC80006A94C /* _2___Bundle__Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CDD60019D16FC80006A94C /* _2___Bundle__Tests.m */; };
+		69CDD60B19D172B80006A94C /* iOS 7 Programming Cookbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 69CDD60A19D172B80006A94C /* iOS 7 Programming Cookbook.pdf */; };
+		69CDD60D19D1747A0006A94C /* 华为软件编程规范总则.doc in Resources */ = {isa = PBXBuildFile; fileRef = 69CDD60C19D1747A0006A94C /* 华为软件编程规范总则.doc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		69CDD5FC19D16FC80006A94C /* 02.加载Bundle文件Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "02.加载Bundle文件Tests-Info.plist"; sourceTree = "<group>"; };
 		69CDD5FE19D16FC80006A94C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		69CDD60019D16FC80006A94C /* _2___Bundle__Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_2___Bundle__Tests.m"; sourceTree = "<group>"; };
+		69CDD60A19D172B80006A94C /* iOS 7 Programming Cookbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS 7 Programming Cookbook.pdf"; sourceTree = "<group>"; };
+		69CDD60C19D1747A0006A94C /* 华为软件编程规范总则.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华为软件编程规范总则.doc"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		69CDD5DC19D16FC70006A94C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69CDD60C19D1747A0006A94C /* 华为软件编程规范总则.doc */,
+				69CDD60A19D172B80006A94C /* iOS 7 Programming Cookbook.pdf */,
 				69CDD5DD19D16FC70006A94C /* 02.加载Bundle文件-Info.plist */,
 				69CDD5DE19D16FC70006A94C /* InfoPlist.strings */,
 				69CDD5E119D16FC70006A94C /* main.m */,
@@ -228,8 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CDD60D19D1747A0006A94C /* 华为软件编程规范总则.doc in Resources */,
 				69CDD5EE19D16FC70006A94C /* Images.xcassets in Resources */,
 				69CDD5E019D16FC70006A94C /* InfoPlist.strings in Resources */,
+				69CDD60B19D172B80006A94C /* iOS 7 Programming Cookbook.pdf in Resources */,
 				69CDD5E919D16FC70006A94C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
