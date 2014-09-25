@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6908739519D41EB300F2568F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739419D41EB300F2568F /* Foundation.framework */; };
+		6908739719D41EB300F2568F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739619D41EB300F2568F /* CoreGraphics.framework */; };
+		6908739919D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
+		6908739F19D41EB300F2568F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6908739D19D41EB300F2568F /* InfoPlist.strings */; };
+		690873A119D41EB300F2568F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873A019D41EB300F2568F /* main.m */; };
+		690873A519D41EB300F2568F /* RWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873A419D41EB300F2568F /* RWAppDelegate.m */; };
+		690873A719D41EB300F2568F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690873A619D41EB300F2568F /* Images.xcassets */; };
+		690873AE19D41EB300F2568F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690873AD19D41EB300F2568F /* XCTest.framework */; };
+		690873AF19D41EB300F2568F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739419D41EB300F2568F /* Foundation.framework */; };
+		690873B019D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
+		690873B819D41EB300F2568F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 690873B619D41EB300F2568F /* InfoPlist.strings */; };
+		690873BA19D41EB300F2568F /* RailsWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873B919D41EB300F2568F /* RailsWeiboTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		690873B119D41EB300F2568F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6908738919D41EB200F2568F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6908739019D41EB300F2568F;
+			remoteInfo = RailsWeibo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6908739119D41EB300F2568F /* RailsWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailsWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6908739419D41EB300F2568F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6908739619D41EB300F2568F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6908739819D41EB300F2568F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6908739C19D41EB300F2568F /* RailsWeibo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsWeibo-Info.plist"; sourceTree = "<group>"; };
+		6908739E19D41EB300F2568F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		690873A019D41EB300F2568F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		690873A219D41EB300F2568F /* RailsWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RailsWeibo-Prefix.pch"; sourceTree = "<group>"; };
+		690873A319D41EB300F2568F /* RWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAppDelegate.h; sourceTree = "<group>"; };
+		690873A419D41EB300F2568F /* RWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAppDelegate.m; sourceTree = "<group>"; };
+		690873A619D41EB300F2568F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		690873AC19D41EB300F2568F /* RailsWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RailsWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		690873AD19D41EB300F2568F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		690873B519D41EB300F2568F /* RailsWeiboTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsWeiboTests-Info.plist"; sourceTree = "<group>"; };
+		690873B719D41EB300F2568F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		690873B919D41EB300F2568F /* RailsWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RailsWeiboTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6908738E19D41EB300F2568F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6908739719D41EB300F2568F /* CoreGraphics.framework in Frameworks */,
+				6908739919D41EB300F2568F /* UIKit.framework in Frameworks */,
+				6908739519D41EB300F2568F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		690873A919D41EB300F2568F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690873AE19D41EB300F2568F /* XCTest.framework in Frameworks */,
+				690873B019D41EB300F2568F /* UIKit.framework in Frameworks */,
+				690873AF19D41EB300F2568F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6908738819D41EB200F2568F = {
+			isa = PBXGroup;
+			children = (
+				6908739A19D41EB300F2568F /* RailsWeibo */,
+				690873B319D41EB300F2568F /* RailsWeiboTests */,
+				6908739319D41EB300F2568F /* Frameworks */,
+				6908739219D41EB300F2568F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6908739219D41EB300F2568F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6908739119D41EB300F2568F /* RailsWeibo.app */,
+				690873AC19D41EB300F2568F /* RailsWeiboTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6908739319D41EB300F2568F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6908739419D41EB300F2568F /* Foundation.framework */,
+				6908739619D41EB300F2568F /* CoreGraphics.framework */,
+				6908739819D41EB300F2568F /* UIKit.framework */,
+				690873AD19D41EB300F2568F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6908739A19D41EB300F2568F /* RailsWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				690873A319D41EB300F2568F /* RWAppDelegate.h */,
+				690873A419D41EB300F2568F /* RWAppDelegate.m */,
+				690873A619D41EB300F2568F /* Images.xcassets */,
+				6908739B19D41EB300F2568F /* Supporting Files */,
+			);
+			path = RailsWeibo;
+			sourceTree = "<group>";
+		};
+		6908739B19D41EB300F2568F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6908739C19D41EB300F2568F /* RailsWeibo-Info.plist */,
+				6908739D19D41EB300F2568F /* InfoPlist.strings */,
+				690873A019D41EB300F2568F /* main.m */,
+				690873A219D41EB300F2568F /* RailsWeibo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		690873B319D41EB300F2568F /* RailsWeiboTests */ = {
+			isa = PBXGroup;
+			children = (
+				690873B919D41EB300F2568F /* RailsWeiboTests.m */,
+				690873B419D41EB300F2568F /* Supporting Files */,
+			);
+			path = RailsWeiboTests;
+			sourceTree = "<group>";
+		};
+		690873B419D41EB300F2568F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				690873B519D41EB300F2568F /* RailsWeiboTests-Info.plist */,
+				690873B619D41EB300F2568F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6908739019D41EB300F2568F /* RailsWeibo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 690873BD19D41EB300F2568F /* Build configuration list for PBXNativeTarget "RailsWeibo" */;
+			buildPhases = (
+				6908738D19D41EB300F2568F /* Sources */,
+				6908738E19D41EB300F2568F /* Frameworks */,
+				6908738F19D41EB300F2568F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RailsWeibo;
+			productName = RailsWeibo;
+			productReference = 6908739119D41EB300F2568F /* RailsWeibo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		690873AB19D41EB300F2568F /* RailsWeiboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 690873C019D41EB300F2568F /* Build configuration list for PBXNativeTarget "RailsWeiboTests" */;
+			buildPhases = (
+				690873A819D41EB300F2568F /* Sources */,
+				690873A919D41EB300F2568F /* Frameworks */,
+				690873AA19D41EB300F2568F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				690873B219D41EB300F2568F /* PBXTargetDependency */,
+			);
+			name = RailsWeiboTests;
+			productName = RailsWeiboTests;
+			productReference = 690873AC19D41EB300F2568F /* RailsWeiboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6908738919D41EB200F2568F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Railsgem;
+				TargetAttributes = {
+					690873AB19D41EB300F2568F = {
+						TestTargetID = 6908739019D41EB300F2568F;
+					};
+				};
+			};
+			buildConfigurationList = 6908738C19D41EB200F2568F /* Build configuration list for PBXProject "RailsWeibo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6908738819D41EB200F2568F;
+			productRefGroup = 6908739219D41EB300F2568F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6908739019D41EB300F2568F /* RailsWeibo */,
+				690873AB19D41EB300F2568F /* RailsWeiboTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6908738F19D41EB300F2568F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6908739F19D41EB300F2568F /* InfoPlist.strings in Resources */,
+				690873A719D41EB300F2568F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		690873AA19D41EB300F2568F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690873B819D41EB300F2568F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6908738D19D41EB300F2568F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690873A119D41EB300F2568F /* main.m in Sources */,
+				690873A519D41EB300F2568F /* RWAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		690873A819D41EB300F2568F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690873BA19D41EB300F2568F /* RailsWeiboTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		690873B219D41EB300F2568F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6908739019D41EB300F2568F /* RailsWeibo */;
+			targetProxy = 690873B119D41EB300F2568F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6908739D19D41EB300F2568F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6908739E19D41EB300F2568F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		690873B619D41EB300F2568F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				690873B719D41EB300F2568F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		690873BB19D41EB300F2568F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		690873BC19D41EB300F2568F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		690873BE19D41EB300F2568F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
+				INFOPLIST_FILE = "RailsWeibo/RailsWeibo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		690873BF19D41EB300F2568F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
+				INFOPLIST_FILE = "RailsWeibo/RailsWeibo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		690873C119D41EB300F2568F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RailsWeibo.app/RailsWeibo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RailsWeiboTests/RailsWeiboTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		690873C219D41EB300F2568F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RailsWeibo.app/RailsWeibo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
+				INFOPLIST_FILE = "RailsWeiboTests/RailsWeiboTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6908738C19D41EB200F2568F /* Build configuration list for PBXProject "RailsWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				690873BB19D41EB300F2568F /* Debug */,
+				690873BC19D41EB300F2568F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		690873BD19D41EB300F2568F /* Build configuration list for PBXNativeTarget "RailsWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				690873BE19D41EB300F2568F /* Debug */,
+				690873BF19D41EB300F2568F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		690873C019D41EB300F2568F /* Build configuration list for PBXNativeTarget "RailsWeiboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				690873C119D41EB300F2568F /* Debug */,
+				690873C219D41EB300F2568F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6908738919D41EB200F2568F /* Project object */;
+}
