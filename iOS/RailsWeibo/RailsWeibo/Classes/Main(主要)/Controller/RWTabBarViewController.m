@@ -11,6 +11,7 @@
 #import "RWMessageViewController.h"
 #import "RWHomeViewController.h"
 #import "RWDiscoverViewController.h"
+#import "UIImage+CY.h"
 
 @interface RWTabBarViewController ()
 
@@ -35,19 +36,19 @@
 {
     //首页
     RWHomeViewController *home = [[RWHomeViewController alloc] init];
-    [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home_os7" selectedImageName:@"tabbar_home_selected_os7"];
+    [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     //消息
     RWMessageViewController *message = [[RWMessageViewController alloc] init];
-    [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center_os7" selectedImageName:@"tabbar_message_center_selected_os7"];
+    [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
     
     //广场
     RWDiscoverViewController *discover = [[RWDiscoverViewController alloc] init];
-    [self setupChildViewController:discover title:@"广场" imageName:@"tabbar_discover_os7" selectedImageName:@"tabbar_discover_selected_os7"];
+    [self setupChildViewController:discover title:@"广场" imageName:@"tabbar_discover" selectedImageName:@"tabbar_discover_selected"];
     
     //我
     RWMeViewController *me = [[RWMeViewController alloc] init];
-    [self setupChildViewController:me title:@"我" imageName:@"tabbar_profile_os7" selectedImageName:@"ttabbar_profile_selected_os7"];
+    [self setupChildViewController:me title:@"我" imageName:@"tabbar_profile" selectedImageName:@"ttabbar_profile_selected"];
     
 }
 
@@ -64,8 +65,13 @@
 {
     //设置控制器的属性
     childVc.title = title;
-    childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVc.tabBarItem.image = [UIImage imageWithName:imageName];
+    UIImage *selectedImage = [UIImage imageWithName:selectedImageName];
+    if (iOS7) {
+        childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    } else {
+        childVc.tabBarItem.selectedImage = selectedImage;
+    }
     
     //包装一个导航控制器
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];

@@ -11,19 +11,20 @@
 		6908739719D41EB300F2568F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739619D41EB300F2568F /* CoreGraphics.framework */; };
 		6908739919D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
 		6908739F19D41EB300F2568F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6908739D19D41EB300F2568F /* InfoPlist.strings */; };
-		690873A119D41EB300F2568F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873A019D41EB300F2568F /* main.m */; };
-		690873A519D41EB300F2568F /* RWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873A419D41EB300F2568F /* RWAppDelegate.m */; };
 		690873A719D41EB300F2568F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690873A619D41EB300F2568F /* Images.xcassets */; };
 		690873AE19D41EB300F2568F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690873AD19D41EB300F2568F /* XCTest.framework */; };
 		690873AF19D41EB300F2568F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739419D41EB300F2568F /* Foundation.framework */; };
 		690873B019D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
 		690873B819D41EB300F2568F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 690873B619D41EB300F2568F /* InfoPlist.strings */; };
 		690873BA19D41EB300F2568F /* RailsWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873B919D41EB300F2568F /* RailsWeiboTests.m */; };
-		690873C519D45DAA00F2568F /* RWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873C419D45DAA00F2568F /* RWTabBarViewController.m */; };
-		690873CE19D4602000F2568F /* RWMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873CD19D4602000F2568F /* RWMessageViewController.m */; };
-		690873D119D4607900F2568F /* RWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873D019D4607900F2568F /* RWHomeViewController.m */; };
-		690873D419D460AD00F2568F /* RWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873D319D460AD00F2568F /* RWDiscoverViewController.m */; };
-		690873D719D460EF00F2568F /* RWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873D619D460EF00F2568F /* RWMeViewController.m */; };
+		690873FF19D56C3F00F2568F /* RWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873DC19D56C3F00F2568F /* RWDiscoverViewController.m */; };
+		6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873E419D56C3F00F2568F /* RWHomeViewController.m */; };
+		6908740219D56C3F00F2568F /* RWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873EA19D56C3F00F2568F /* RWTabBarViewController.m */; };
+		6908740319D56C3F00F2568F /* RWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873F019D56C3F00F2568F /* RWMeViewController.m */; };
+		6908740419D56C3F00F2568F /* RWMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873F619D56C3F00F2568F /* RWMessageViewController.m */; };
+		6908740519D56C3F00F2568F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873FB19D56C3F00F2568F /* main.m */; };
+		6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873FE19D56C3F00F2568F /* RWAppDelegate.m */; };
+		6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 6908740819D56EBB00F2568F /* UIImage+CY.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,26 +44,28 @@
 		6908739819D41EB300F2568F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6908739C19D41EB300F2568F /* RailsWeibo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsWeibo-Info.plist"; sourceTree = "<group>"; };
 		6908739E19D41EB300F2568F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		690873A019D41EB300F2568F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		690873A219D41EB300F2568F /* RailsWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RailsWeibo-Prefix.pch"; sourceTree = "<group>"; };
-		690873A319D41EB300F2568F /* RWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAppDelegate.h; sourceTree = "<group>"; };
-		690873A419D41EB300F2568F /* RWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAppDelegate.m; sourceTree = "<group>"; };
 		690873A619D41EB300F2568F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		690873AC19D41EB300F2568F /* RailsWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RailsWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		690873AD19D41EB300F2568F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		690873B519D41EB300F2568F /* RailsWeiboTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsWeiboTests-Info.plist"; sourceTree = "<group>"; };
 		690873B719D41EB300F2568F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		690873B919D41EB300F2568F /* RailsWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RailsWeiboTests.m; sourceTree = "<group>"; };
-		690873C319D45DAA00F2568F /* RWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTabBarViewController.h; sourceTree = "<group>"; };
-		690873C419D45DAA00F2568F /* RWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBarViewController.m; sourceTree = "<group>"; };
-		690873CC19D4602000F2568F /* RWMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMessageViewController.h; sourceTree = "<group>"; };
-		690873CD19D4602000F2568F /* RWMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMessageViewController.m; sourceTree = "<group>"; };
-		690873CF19D4607900F2568F /* RWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWHomeViewController.h; path = ../RWHomeViewController.h; sourceTree = "<group>"; };
-		690873D019D4607900F2568F /* RWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWHomeViewController.m; path = ../RWHomeViewController.m; sourceTree = "<group>"; };
-		690873D219D460AD00F2568F /* RWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDiscoverViewController.h; sourceTree = "<group>"; };
-		690873D319D460AD00F2568F /* RWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDiscoverViewController.m; sourceTree = "<group>"; };
-		690873D519D460EF00F2568F /* RWMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMeViewController.h; sourceTree = "<group>"; };
-		690873D619D460EF00F2568F /* RWMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMeViewController.m; sourceTree = "<group>"; };
+		690873DB19D56C3F00F2568F /* RWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDiscoverViewController.h; sourceTree = "<group>"; };
+		690873DC19D56C3F00F2568F /* RWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDiscoverViewController.m; sourceTree = "<group>"; };
+		690873E319D56C3F00F2568F /* RWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHomeViewController.h; sourceTree = "<group>"; };
+		690873E419D56C3F00F2568F /* RWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHomeViewController.m; sourceTree = "<group>"; };
+		690873E919D56C3F00F2568F /* RWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTabBarViewController.h; sourceTree = "<group>"; };
+		690873EA19D56C3F00F2568F /* RWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBarViewController.m; sourceTree = "<group>"; };
+		690873EF19D56C3F00F2568F /* RWMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMeViewController.h; sourceTree = "<group>"; };
+		690873F019D56C3F00F2568F /* RWMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMeViewController.m; sourceTree = "<group>"; };
+		690873F519D56C3F00F2568F /* RWMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMessageViewController.h; sourceTree = "<group>"; };
+		690873F619D56C3F00F2568F /* RWMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMessageViewController.m; sourceTree = "<group>"; };
+		690873FB19D56C3F00F2568F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		690873FC19D56C3F00F2568F /* RailsWeibo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RailsWeibo-Prefix.pch"; sourceTree = "<group>"; };
+		690873FD19D56C3F00F2568F /* RWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWAppDelegate.h; sourceTree = "<group>"; };
+		690873FE19D56C3F00F2568F /* RWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWAppDelegate.m; sourceTree = "<group>"; };
+		6908740719D56EBB00F2568F /* UIImage+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CY.h"; sourceTree = "<group>"; };
+		6908740819D56EBB00F2568F /* UIImage+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CY.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,18 +125,7 @@
 		6908739A19D41EB300F2568F /* RailsWeibo */ = {
 			isa = PBXGroup;
 			children = (
-				690873CF19D4607900F2568F /* RWHomeViewController.h */,
-				690873D019D4607900F2568F /* RWHomeViewController.m */,
-				690873D219D460AD00F2568F /* RWDiscoverViewController.h */,
-				690873D319D460AD00F2568F /* RWDiscoverViewController.m */,
-				690873D519D460EF00F2568F /* RWMeViewController.h */,
-				690873D619D460EF00F2568F /* RWMeViewController.m */,
-				690873CC19D4602000F2568F /* RWMessageViewController.h */,
-				690873CD19D4602000F2568F /* RWMessageViewController.m */,
-				690873C319D45DAA00F2568F /* RWTabBarViewController.h */,
-				690873C419D45DAA00F2568F /* RWTabBarViewController.m */,
-				690873A319D41EB300F2568F /* RWAppDelegate.h */,
-				690873A419D41EB300F2568F /* RWAppDelegate.m */,
+				690873D819D56C3F00F2568F /* Classes */,
 				6908739B19D41EB300F2568F /* Supporting Files */,
 			);
 			path = RailsWeibo;
@@ -145,8 +137,6 @@
 				690873A619D41EB300F2568F /* Images.xcassets */,
 				6908739C19D41EB300F2568F /* RailsWeibo-Info.plist */,
 				6908739D19D41EB300F2568F /* InfoPlist.strings */,
-				690873A019D41EB300F2568F /* main.m */,
-				690873A219D41EB300F2568F /* RailsWeibo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -167,6 +157,205 @@
 				690873B619D41EB300F2568F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		690873D819D56C3F00F2568F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				690873D919D56C3F00F2568F /* Discover(广场) */,
+				690873DF19D56C3F00F2568F /* Home(首页) */,
+				690873E719D56C3F00F2568F /* Main(主要) */,
+				690873ED19D56C3F00F2568F /* Me(我) */,
+				690873F319D56C3F00F2568F /* Message(消息) */,
+				690873F919D56C3F00F2568F /* Other(其他) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		690873D919D56C3F00F2568F /* Discover(广场) */ = {
+			isa = PBXGroup;
+			children = (
+				690873DA19D56C3F00F2568F /* Controller */,
+				690873DD19D56C3F00F2568F /* Model */,
+				690873DE19D56C3F00F2568F /* View */,
+			);
+			path = "Discover(广场)";
+			sourceTree = "<group>";
+		};
+		690873DA19D56C3F00F2568F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690873DB19D56C3F00F2568F /* RWDiscoverViewController.h */,
+				690873DC19D56C3F00F2568F /* RWDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690873DD19D56C3F00F2568F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690873DE19D56C3F00F2568F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		690873DF19D56C3F00F2568F /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				690873E019D56C3F00F2568F /* Controller */,
+				690873E519D56C3F00F2568F /* Model */,
+				690873E619D56C3F00F2568F /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		690873E019D56C3F00F2568F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690873E319D56C3F00F2568F /* RWHomeViewController.h */,
+				690873E419D56C3F00F2568F /* RWHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690873E519D56C3F00F2568F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690873E619D56C3F00F2568F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		690873E719D56C3F00F2568F /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				690873E819D56C3F00F2568F /* Controller */,
+				690873EB19D56C3F00F2568F /* Model */,
+				690873EC19D56C3F00F2568F /* View */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		690873E819D56C3F00F2568F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690873E919D56C3F00F2568F /* RWTabBarViewController.h */,
+				690873EA19D56C3F00F2568F /* RWTabBarViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690873EB19D56C3F00F2568F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690873EC19D56C3F00F2568F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		690873ED19D56C3F00F2568F /* Me(我) */ = {
+			isa = PBXGroup;
+			children = (
+				690873EE19D56C3F00F2568F /* Controller */,
+				690873F119D56C3F00F2568F /* Model */,
+				690873F219D56C3F00F2568F /* View */,
+			);
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		690873EE19D56C3F00F2568F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690873EF19D56C3F00F2568F /* RWMeViewController.h */,
+				690873F019D56C3F00F2568F /* RWMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690873F119D56C3F00F2568F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690873F219D56C3F00F2568F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		690873F319D56C3F00F2568F /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				690873F419D56C3F00F2568F /* Controller */,
+				690873F719D56C3F00F2568F /* Model */,
+				690873F819D56C3F00F2568F /* View */,
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		690873F419D56C3F00F2568F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690873F519D56C3F00F2568F /* RWMessageViewController.h */,
+				690873F619D56C3F00F2568F /* RWMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690873F719D56C3F00F2568F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690873F819D56C3F00F2568F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		690873F919D56C3F00F2568F /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				690873FA19D56C3F00F2568F /* Category */,
+				690873FB19D56C3F00F2568F /* main.m */,
+				690873FC19D56C3F00F2568F /* RailsWeibo-Prefix.pch */,
+				690873FD19D56C3F00F2568F /* RWAppDelegate.h */,
+				690873FE19D56C3F00F2568F /* RWAppDelegate.m */,
+			);
+			path = "Other(其他)";
+			sourceTree = "<group>";
+		};
+		690873FA19D56C3F00F2568F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6908740719D56EBB00F2568F /* UIImage+CY.h */,
+				6908740819D56EBB00F2568F /* UIImage+CY.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,13 +454,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				690873D119D4607900F2568F /* RWHomeViewController.m in Sources */,
-				690873CE19D4602000F2568F /* RWMessageViewController.m in Sources */,
-				690873A119D41EB300F2568F /* main.m in Sources */,
-				690873A519D41EB300F2568F /* RWAppDelegate.m in Sources */,
-				690873D419D460AD00F2568F /* RWDiscoverViewController.m in Sources */,
-				690873D719D460EF00F2568F /* RWMeViewController.m in Sources */,
-				690873C519D45DAA00F2568F /* RWTabBarViewController.m in Sources */,
+				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
+				6908740419D56C3F00F2568F /* RWMessageViewController.m in Sources */,
+				6908740219D56C3F00F2568F /* RWTabBarViewController.m in Sources */,
+				6908740319D56C3F00F2568F /* RWMeViewController.m in Sources */,
+				690873FF19D56C3F00F2568F /* RWDiscoverViewController.m in Sources */,
+				6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */,
+				6908740519D56C3F00F2568F /* main.m in Sources */,
+				6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
+				GCC_PREFIX_HEADER = "RailsWeibo/Classes/Other(其他)/RailsWeibo-Prefix.pch";
 				INFOPLIST_FILE = "RailsWeibo/RailsWeibo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
+				GCC_PREFIX_HEADER = "RailsWeibo/Classes/Other(其他)/RailsWeibo-Prefix.pch";
 				INFOPLIST_FILE = "RailsWeibo/RailsWeibo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
