@@ -19,6 +19,11 @@
 		690873B019D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
 		690873B819D41EB300F2568F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 690873B619D41EB300F2568F /* InfoPlist.strings */; };
 		690873BA19D41EB300F2568F /* RailsWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873B919D41EB300F2568F /* RailsWeiboTests.m */; };
+		690873C519D45DAA00F2568F /* RWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873C419D45DAA00F2568F /* RWTabBarViewController.m */; };
+		690873CE19D4602000F2568F /* RWMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873CD19D4602000F2568F /* RWMessageViewController.m */; };
+		690873D119D4607900F2568F /* RWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873D019D4607900F2568F /* RWHomeViewController.m */; };
+		690873D419D460AD00F2568F /* RWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873D319D460AD00F2568F /* RWDiscoverViewController.m */; };
+		690873D719D460EF00F2568F /* RWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873D619D460EF00F2568F /* RWMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,16 @@
 		690873B519D41EB300F2568F /* RailsWeiboTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsWeiboTests-Info.plist"; sourceTree = "<group>"; };
 		690873B719D41EB300F2568F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		690873B919D41EB300F2568F /* RailsWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RailsWeiboTests.m; sourceTree = "<group>"; };
+		690873C319D45DAA00F2568F /* RWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTabBarViewController.h; sourceTree = "<group>"; };
+		690873C419D45DAA00F2568F /* RWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBarViewController.m; sourceTree = "<group>"; };
+		690873CC19D4602000F2568F /* RWMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMessageViewController.h; sourceTree = "<group>"; };
+		690873CD19D4602000F2568F /* RWMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMessageViewController.m; sourceTree = "<group>"; };
+		690873CF19D4607900F2568F /* RWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWHomeViewController.h; path = ../RWHomeViewController.h; sourceTree = "<group>"; };
+		690873D019D4607900F2568F /* RWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWHomeViewController.m; path = ../RWHomeViewController.m; sourceTree = "<group>"; };
+		690873D219D460AD00F2568F /* RWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDiscoverViewController.h; sourceTree = "<group>"; };
+		690873D319D460AD00F2568F /* RWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDiscoverViewController.m; sourceTree = "<group>"; };
+		690873D519D460EF00F2568F /* RWMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMeViewController.h; sourceTree = "<group>"; };
+		690873D619D460EF00F2568F /* RWMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +122,18 @@
 		6908739A19D41EB300F2568F /* RailsWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				690873CF19D4607900F2568F /* RWHomeViewController.h */,
+				690873D019D4607900F2568F /* RWHomeViewController.m */,
+				690873D219D460AD00F2568F /* RWDiscoverViewController.h */,
+				690873D319D460AD00F2568F /* RWDiscoverViewController.m */,
+				690873D519D460EF00F2568F /* RWMeViewController.h */,
+				690873D619D460EF00F2568F /* RWMeViewController.m */,
+				690873CC19D4602000F2568F /* RWMessageViewController.h */,
+				690873CD19D4602000F2568F /* RWMessageViewController.m */,
+				690873C319D45DAA00F2568F /* RWTabBarViewController.h */,
+				690873C419D45DAA00F2568F /* RWTabBarViewController.m */,
 				690873A319D41EB300F2568F /* RWAppDelegate.h */,
 				690873A419D41EB300F2568F /* RWAppDelegate.m */,
-				690873A619D41EB300F2568F /* Images.xcassets */,
 				6908739B19D41EB300F2568F /* Supporting Files */,
 			);
 			path = RailsWeibo;
@@ -118,6 +142,7 @@
 		6908739B19D41EB300F2568F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				690873A619D41EB300F2568F /* Images.xcassets */,
 				6908739C19D41EB300F2568F /* RailsWeibo-Info.plist */,
 				6908739D19D41EB300F2568F /* InfoPlist.strings */,
 				690873A019D41EB300F2568F /* main.m */,
@@ -240,8 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690873D119D4607900F2568F /* RWHomeViewController.m in Sources */,
+				690873CE19D4602000F2568F /* RWMessageViewController.m in Sources */,
 				690873A119D41EB300F2568F /* main.m in Sources */,
 				690873A519D41EB300F2568F /* RWAppDelegate.m in Sources */,
+				690873D419D460AD00F2568F /* RWDiscoverViewController.m in Sources */,
+				690873D719D460EF00F2568F /* RWMeViewController.m in Sources */,
+				690873C519D45DAA00F2568F /* RWTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
 				INFOPLIST_FILE = "RailsWeibo/RailsWeibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RailsWeibo/RailsWeibo-Prefix.pch";
 				INFOPLIST_FILE = "RailsWeibo/RailsWeibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
