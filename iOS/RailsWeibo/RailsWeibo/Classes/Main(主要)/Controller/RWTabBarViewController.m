@@ -12,9 +12,13 @@
 #import "RWHomeViewController.h"
 #import "RWDiscoverViewController.h"
 #import "UIImage+CY.h"
+#import "RWTabBar.h"
 
-@interface RWTabBarViewController ()
-
+@interface RWTabBarViewController ()<RWTabBarDelegate>
+/**
+ *  自定义的Tabbar
+ */
+@property (nonatomic,weak)RWTabBar *customTabBar;
 @end
 
 @implementation RWTabBarViewController
@@ -22,12 +26,58 @@
 {
     [super viewDidLoad];
     
-    //初始化所有的子控制器
+    //初始化Tabbar
+    [self setupTabbar];
     
+    //初始化所有的子控制器
     [self setupAllChildViewControllers];
     
 
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+//    NSLog(@"%@", self.tabBar.subviews);
+    
+    for (UIView *child in self.tabBar.subviews) {
+        if ([child isKindOfClass:[UIControl class]]) {
+            [child removeFromSuperview];
+//            NSLog(@"%@", child.superclass);
+            
+        }
+    }
+    
+}
+
+/**
+ *  初始化Tabbar
+ */
+
+-(void)setupTabbar
+{
+    //自定义Tabbar
+    RWTabBar *customTabBar = [[RWTabBar alloc] init];
+    //设置背景
+//    customTabBar.backgroundColor = [UIColor redColor];
+    //设置边框才能出现
+    customTabBar.frame = self.tabBar.bounds;
+    customTabBar.delegate = self;
+    [self.tabBar addSubview:customTabBar];
+    self.customTabBar = customTabBar;
+}
+
+/**
+ *  监听Tabbar按钮的改变
+ *  @param from   原来选中的位置
+ *  @param to     最新选中的位置
+ */
+-(void)tabBar:(RWTabBar *)tabBar didSelectedButtonForm:(int)from to:(int)to
+{
+    self.selectedIndex = to;
+}
+
 /**
  *  初始化所有的子控制器
  */
@@ -48,7 +98,7 @@
     
     //我
     RWMeViewController *me = [[RWMeViewController alloc] init];
-    [self setupChildViewController:me title:@"我" imageName:@"tabbar_profile" selectedImageName:@"ttabbar_profile_selected"];
+    [self setupChildViewController:me title:@"我" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
     
 }
 
@@ -77,6 +127,8 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
     
+    //添加Tabbar内部按钮
+    [self.customTabBar addTabBarButtonWithItem:childVc.tabBarItem];
     
 }
 
