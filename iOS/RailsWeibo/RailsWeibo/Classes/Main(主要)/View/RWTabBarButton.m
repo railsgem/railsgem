@@ -9,7 +9,7 @@
 /**
  *  图标的比例
  */
-#define RWTabBarButtonImageRatio 0.6
+#define RWTabBarButtonImageRatio 0.7
 
 //按钮默认文字颜色
 #define RWTabBarButtonTitleColor (iOS7 ? [UIColor blackColor] : [UIColor whiteColor])

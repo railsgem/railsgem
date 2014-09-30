@@ -87,12 +87,10 @@
 {
     //首页
     RWHomeViewController *home = [[RWHomeViewController alloc] init];
-    home.tabBarItem.badgeValue = @"2";
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     //消息
     RWMessageViewController *message = [[RWMessageViewController alloc] init];
-    message.tabBarItem.badgeValue = @"10";
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
     
     //广场
