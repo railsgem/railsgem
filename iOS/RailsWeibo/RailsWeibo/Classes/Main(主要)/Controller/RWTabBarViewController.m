@@ -11,6 +11,7 @@
 #import "RWMessageViewController.h"
 #import "RWHomeViewController.h"
 #import "RWDiscoverViewController.h"
+#import "RWNavigationController.h"
 #import "UIImage+CY.h"
 #import "RWTabBar.h"
 
@@ -125,7 +126,7 @@
     }
     
     //包装一个导航控制器
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
+    RWNavigationController *nav = [[RWNavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
     
     //添加Tabbar内部按钮

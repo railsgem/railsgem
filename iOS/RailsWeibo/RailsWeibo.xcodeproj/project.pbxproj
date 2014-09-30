@@ -28,6 +28,7 @@
 		6908740C19D596EF00F2568F /* RWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6908740B19D596EF00F2568F /* RWTabBar.m */; };
 		6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958919D798C000D3A2F9 /* RWTabBarButton.m */; };
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
+		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		6970958919D798C000D3A2F9 /* RWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBarButton.m; sourceTree = "<group>"; };
 		6970958B19D999AB00D3A2F9 /* RWBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBadgeButton.h; sourceTree = "<group>"; };
 		6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBadgeButton.m; sourceTree = "<group>"; };
+		6970958E19DA954000D3A2F9 /* RWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNavigationController.h; sourceTree = "<group>"; };
+		6970958F19DA954000D3A2F9 /* RWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +265,8 @@
 			children = (
 				690873E919D56C3F00F2568F /* RWTabBarViewController.h */,
 				690873EA19D56C3F00F2568F /* RWTabBarViewController.m */,
+				6970958E19DA954000D3A2F9 /* RWNavigationController.h */,
+				6970958F19DA954000D3A2F9 /* RWNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */,
 				6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */,
 				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
 				6908740419D56C3F00F2568F /* RWMessageViewController.m in Sources */,

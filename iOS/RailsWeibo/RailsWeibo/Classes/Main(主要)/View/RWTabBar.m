@@ -66,8 +66,6 @@
     if (self.tabBarButtons.count == 1) {
         [self buttonClick:button];
     }
-    
-    
 }
 
 /**
