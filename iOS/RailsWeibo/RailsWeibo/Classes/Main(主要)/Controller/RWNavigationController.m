@@ -41,6 +41,13 @@
     [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_pushed"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
     
+    // 设置文字属性
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[UITextAttributeTextColor] = [UIColor blackColor];
+    textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
+    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:12];
+    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:textAttrs forState:UIControlStateSelected];
 }
 
 /**
