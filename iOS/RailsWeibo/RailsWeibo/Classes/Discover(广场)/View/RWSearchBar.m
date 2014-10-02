@@ -43,6 +43,9 @@
         attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
         self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"搜索" attributes:attrs];
         
+        // 设置键盘右下角文字样式
+        self.returnKeyType =  UIReturnKeySearch;
+        self.enablesReturnKeyAutomatically = YES; 
 
     }
     return self;

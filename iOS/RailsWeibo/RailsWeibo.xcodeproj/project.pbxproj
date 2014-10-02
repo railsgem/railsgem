@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		69006D4A19DD623C00B0CB4D /* UIBarButtonItem+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 69006D4919DD623C00B0CB4D /* UIBarButtonItem+CY.m */; };
 		69006D4D19DD85A500B0CB4D /* RWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69006D4C19DD85A500B0CB4D /* RWSearchBar.m */; };
+		69006D5019DDA12500B0CB4D /* RWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 69006D4F19DDA12500B0CB4D /* RWTitleButton.m */; };
 		6908739519D41EB300F2568F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739419D41EB300F2568F /* Foundation.framework */; };
 		6908739719D41EB300F2568F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739619D41EB300F2568F /* CoreGraphics.framework */; };
 		6908739919D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
@@ -48,6 +49,8 @@
 		69006D4919DD623C00B0CB4D /* UIBarButtonItem+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CY.m"; sourceTree = "<group>"; };
 		69006D4B19DD85A500B0CB4D /* RWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSearchBar.h; sourceTree = "<group>"; };
 		69006D4C19DD85A500B0CB4D /* RWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSearchBar.m; sourceTree = "<group>"; };
+		69006D4E19DDA12500B0CB4D /* RWTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTitleButton.h; sourceTree = "<group>"; };
+		69006D4F19DDA12500B0CB4D /* RWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTitleButton.m; sourceTree = "<group>"; };
 		6908739119D41EB300F2568F /* RailsWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailsWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6908739419D41EB300F2568F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6908739619D41EB300F2568F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -254,6 +257,8 @@
 		690873E619D56C3F00F2568F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				69006D4E19DDA12500B0CB4D /* RWTitleButton.h */,
+				69006D4F19DDA12500B0CB4D /* RWTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69006D5019DDA12500B0CB4D /* RWTitleButton.m in Sources */,
 				6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */,
 				6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */,
 				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
