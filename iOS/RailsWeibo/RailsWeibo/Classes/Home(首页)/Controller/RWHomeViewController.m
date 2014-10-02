@@ -7,8 +7,8 @@
 //
 
 #import "RWHomeViewController.h"
-
 #import "RWBadgeButton.h"
+#import "UIBarButtonItem+CY.h"
 
 @interface RWHomeViewController ()
 
@@ -20,7 +20,28 @@
 {
     [super viewDidLoad];
     
+//    // 左边按钮
+//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
+//    // 右边按钮
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_pop" highIcon:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+//    
     
+    // 左边按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
+    
+    // 右边按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_pop" highIcon:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+    
+}
+
+- (void)findFriend
+{
+    RWLog(@"findFriend");
+}
+
+- (void)pop
+{
+    RWLog(@"pop");
 }
 
 #pragma mark - Table view data source
