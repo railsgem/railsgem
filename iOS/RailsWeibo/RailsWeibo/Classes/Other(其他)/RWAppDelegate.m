@@ -8,6 +8,7 @@
 
 #import "RWAppDelegate.h"
 #import "RWTabBarViewController.h"
+#import "RWNewfeatureViewController.h"
 
 @implementation RWAppDelegate
 
@@ -18,7 +19,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[RWTabBarViewController alloc] init];
+    self.window.rootViewController = [[RWNewfeatureViewController alloc] init];
     
     [self.window makeKeyAndVisible];
     return YES;
