@@ -99,7 +99,7 @@
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"----%@的%@属性被改变", object , keyPath);
+//    NSLog(@"----%@的%@属性被改变", object , keyPath);
     
     //设置文字
     [self setTitle:self.item.title forState:UIControlStateNormal];
