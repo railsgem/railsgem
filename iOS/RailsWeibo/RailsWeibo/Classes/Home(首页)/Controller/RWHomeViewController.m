@@ -10,12 +10,16 @@
 #import "RWBadgeButton.h"
 #import "UIBarButtonItem+CY.h"
 #import "RWTitleButton.h"
+#import "AFNetworking.h"
+#import "RWAccountTool.h"
+#import "RWAccount.h"
+#import "UIImageView+WebCache.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
 
 @interface RWHomeViewController ()
-
+@property (nonatomic,strong) NSArray *statuses;
 @end
 
 @implementation RWHomeViewController
@@ -24,7 +28,45 @@
 {
     [super viewDidLoad];
     
+    // 1.设置导航栏内容
+    [self setupNavBar];
     
+    // 2.加载微博数据
+    [self setupStatusData];
+}
+
+/**
+ *  加载微博数据
+ */
+-(void)setupStatusData
+{
+    
+    // AFNetworking/AFN
+    // 创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    
+    // 发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // 取出所有微博数据
+        self.statuses = responseObject[@"statuses"];
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
+
+/**
+ *  设置导航栏内容
+ */
+- (void)setupNavBar
+{
     // 左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
     
@@ -68,7 +110,7 @@
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.statuses.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,7 +123,19 @@
     }
     
     //设置cell的数据
-    cell.textLabel.text = @"aaaa";
+    // 微博的文字内容
+    NSDictionary *status = self.statuses[indexPath.row];
+    cell.textLabel.text = status[@"text"];
+    
+    // 微博作者昵称
+    NSDictionary *user = status[@"user"];
+    cell.detailTextLabel.text = user[@"name"];
+    
+    // 微博作者的头像
+    NSString *iconUrl = user[@"profile_image_url"];
+//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:iconUrl]];
+//    cell.imageView.image = [UIImage imageWithData:imageData];
+    [cell.imageView setImageWithURL:iconUrl placeholderImage:[UIImage imageWithName:@"hot_status"]];
     
     return cell;
 }
