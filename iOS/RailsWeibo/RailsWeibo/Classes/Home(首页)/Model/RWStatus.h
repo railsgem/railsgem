@@ -35,7 +35,5 @@
  */
 @property (nonatomic, strong) RWUser *user;
 
-+ (instancetype)statusWithDict:(NSDictionary *)dict;
-- (instancetype)initWithDict:(NSDictionary *)dict;
 
 @end

@@ -16,6 +16,7 @@
 #import "UIImageView+WebCache.h"
 #import "RWUser.h"
 #import "RWStatus.h"
+#import "MJExtension.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
@@ -56,16 +57,17 @@
         // 取出所有微博数据(每一条微博都是一个字典)
         NSArray *dictArray = responseObject[@"statuses"];
         
-        // 将字典数据转为模型数据
-        NSMutableArray *statusArray = [NSMutableArray array];
-        for (NSDictionary *dict in dictArray) {
-            // 创建模型
-            RWStatus *status = [RWStatus statusWithDict:dict];
-            
-            // 添加模型
-            [statusArray addObject:status];
-        }
-        self.statuses = statusArray;
+//        // 将字典数据转为模型数据
+//        NSMutableArray *statusArray = [NSMutableArray array];
+//        for (NSDictionary *dict in dictArray) {
+//            // 创建模型
+//            RWStatus *status = [RWStatus objectWithKeyValues:dict];
+//            
+//            // 添加模型
+//            [statusArray addObject:status];
+//        }
+        
+        self.statuses = [RWStatus objectArrayWithKeyValuesArray:dictArray];
         
         // 刷新表格
         [self.tableView reloadData];
