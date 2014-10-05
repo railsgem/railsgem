@@ -14,6 +14,8 @@
 #import "RWAccountTool.h"
 #import "RWAccount.h"
 #import "UIImageView+WebCache.h"
+#import "RWUser.h"
+#import "RWStatus.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
@@ -51,8 +53,19 @@
     
     // 发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // 取出所有微博数据
-        self.statuses = responseObject[@"statuses"];
+        // 取出所有微博数据(每一条微博都是一个字典)
+        NSArray *dictArray = responseObject[@"statuses"];
+        
+        // 将字典数据转为模型数据
+        NSMutableArray *statusArray = [NSMutableArray array];
+        for (NSDictionary *dict in dictArray) {
+            // 创建模型
+            RWStatus *status = [RWStatus statusWithDict:dict];
+            
+            // 添加模型
+            [statusArray addObject:status];
+        }
+        self.statuses = statusArray;
         
         // 刷新表格
         [self.tableView reloadData];
@@ -124,18 +137,15 @@
     
     //设置cell的数据
     // 微博的文字内容
-    NSDictionary *status = self.statuses[indexPath.row];
-    cell.textLabel.text = status[@"text"];
+    RWStatus *status = self.statuses[indexPath.row];
+    cell.textLabel.text = status.text;
     
     // 微博作者昵称
-    NSDictionary *user = status[@"user"];
-    cell.detailTextLabel.text = user[@"name"];
+    RWUser *user = status.user;
+    cell.detailTextLabel.text = user.name;
     
     // 微博作者的头像
-    NSString *iconUrl = user[@"profile_image_url"];
-//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:iconUrl]];
-//    cell.imageView.image = [UIImage imageWithData:imageData];
-    [cell.imageView setImageWithURL:iconUrl placeholderImage:[UIImage imageWithName:@"hot_status"]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageWithName:@"hot_status"]];
     
     return cell;
 }

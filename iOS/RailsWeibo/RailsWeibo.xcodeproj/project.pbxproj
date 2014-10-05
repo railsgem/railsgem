@@ -61,6 +61,8 @@
 		694390CA19E1244800BE32BF /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 694390BA19E1244800BE32BF /* UIImage+MultiFormat.m */; };
 		694390CB19E1244800BE32BF /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 694390BC19E1244800BE32BF /* UIImage+WebP.m */; };
 		694390CC19E1244800BE32BF /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 694390BE19E1244800BE32BF /* UIImageView+WebCache.m */; };
+		694390CF19E15EB800BE32BF /* RWStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 694390CE19E15EB800BE32BF /* RWStatus.m */; };
+		694390D219E165F500BE32BF /* RWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 694390D119E165F500BE32BF /* RWUser.m */; };
 		6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958919D798C000D3A2F9 /* RWTabBarButton.m */; };
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
@@ -178,6 +180,10 @@
 		694390BC19E1244800BE32BF /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		694390BD19E1244800BE32BF /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		694390BE19E1244800BE32BF /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		694390CD19E15EB800BE32BF /* RWStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatus.h; sourceTree = "<group>"; };
+		694390CE19E15EB800BE32BF /* RWStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatus.m; sourceTree = "<group>"; };
+		694390D019E165F500BE32BF /* RWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWUser.h; sourceTree = "<group>"; };
+		694390D119E165F500BE32BF /* RWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWUser.m; sourceTree = "<group>"; };
 		6970958819D798C000D3A2F9 /* RWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTabBarButton.h; sourceTree = "<group>"; };
 		6970958919D798C000D3A2F9 /* RWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBarButton.m; sourceTree = "<group>"; };
 		6970958B19D999AB00D3A2F9 /* RWBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBadgeButton.h; sourceTree = "<group>"; };
@@ -349,6 +355,10 @@
 		690873E519D56C3F00F2568F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				694390CD19E15EB800BE32BF /* RWStatus.h */,
+				694390CE19E15EB800BE32BF /* RWStatus.m */,
+				694390D019E165F500BE32BF /* RWUser.h */,
+				694390D119E165F500BE32BF /* RWUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -758,6 +768,7 @@
 				694390C819E1244800BE32BF /* UIButton+WebCache.m in Sources */,
 				6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */,
 				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
+				694390CF19E15EB800BE32BF /* RWStatus.m in Sources */,
 				6908740419D56C3F00F2568F /* RWMessageViewController.m in Sources */,
 				694390C919E1244800BE32BF /* UIImage+GIF.m in Sources */,
 				694390C719E1244800BE32BF /* SDWebImagePrefetcher.m in Sources */,
@@ -790,6 +801,7 @@
 				69006D4D19DD85A500B0CB4D /* RWSearchBar.m in Sources */,
 				6908740C19D596EF00F2568F /* RWTabBar.m in Sources */,
 				6908740519D56C3F00F2568F /* main.m in Sources */,
+				694390D219E165F500BE32BF /* RWUser.m in Sources */,
 				6943907E19DEFE2600BE32BF /* AFNetworkReachabilityManager.m in Sources */,
 				6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */,
 				694390CC19E1244800BE32BF /* UIImageView+WebCache.m in Sources */,
