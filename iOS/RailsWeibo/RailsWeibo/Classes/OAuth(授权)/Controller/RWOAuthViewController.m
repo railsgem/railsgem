@@ -11,7 +11,7 @@
 #import "RWAccount.h"
 #import "RWWeiboTool.h"
 #import "RWAccountTool.h"
-
+#import "MBProgressHUD+MJ.h"
 
 @interface RWOAuthViewController () <UIWebViewDelegate>
 
@@ -37,6 +37,33 @@
 }
 
 #pragma mark - webView代理方法
+/**
+ *  webView开始发送请求的时候就会调用
+ */
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    // 显示提醒框
+    [MBProgressHUD showMessage:@"正在加载"];
+}
+
+/**
+ *  webView请求完毕的时候就会调用
+ */
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    // 隐藏提醒框
+    [MBProgressHUD hideHUD];
+}
+
+/**
+ *  webView请求失败的时候就会调用
+ */
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    // 隐藏提醒框
+    [MBProgressHUD hideHUD];
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     // 1.请求URL的路径
@@ -99,8 +126,13 @@
         // 新特性、首页
         [RWWeiboTool chooseRootController];
         
+        // 隐藏提醒框
+        [MBProgressHUD hideHUD];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        RWLog(@"请求失败：%@", error);
+
+        // 隐藏提醒框
+        [MBProgressHUD hideHUD];
     }];
     
 }

@@ -44,6 +44,9 @@
 		6943908719DFF02200BE32BF /* RWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943908619DFF02200BE32BF /* RWAccount.m */; };
 		6943908D19E00B3E00BE32BF /* RWWeiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943908C19E00B3E00BE32BF /* RWWeiboTool.m */; };
 		6943909119E03B9100BE32BF /* RWAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943909019E03B9100BE32BF /* RWAccountTool.m */; };
+		6943909A19E0F1C700BE32BF /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6943909919E0F1C700BE32BF /* MBProgressHUD.bundle */; };
+		6943909F19E0F1ED00BE32BF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943909C19E0F1ED00BE32BF /* MBProgressHUD.m */; };
+		694390A019E0F1ED00BE32BF /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943909E19E0F1ED00BE32BF /* MBProgressHUD+MJ.m */; };
 		6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958919D798C000D3A2F9 /* RWTabBarButton.m */; };
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
@@ -127,6 +130,11 @@
 		6943908C19E00B3E00BE32BF /* RWWeiboTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWWeiboTool.m; sourceTree = "<group>"; };
 		6943908F19E03B9100BE32BF /* RWAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWAccountTool.h; sourceTree = "<group>"; };
 		6943909019E03B9100BE32BF /* RWAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWAccountTool.m; sourceTree = "<group>"; };
+		6943909919E0F1C700BE32BF /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		6943909B19E0F1ED00BE32BF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6943909C19E0F1ED00BE32BF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6943909D19E0F1ED00BE32BF /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		6943909E19E0F1ED00BE32BF /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		6970958819D798C000D3A2F9 /* RWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTabBarButton.h; sourceTree = "<group>"; };
 		6970958919D798C000D3A2F9 /* RWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBarButton.m; sourceTree = "<group>"; };
 		6970958B19D999AB00D3A2F9 /* RWBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBadgeButton.h; sourceTree = "<group>"; };
@@ -501,6 +509,7 @@
 		6943906619DEFE2600BE32BF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6943909819E0F1C700BE32BF /* MBProgressHUD */,
 				6943906719DEFE2600BE32BF /* AFNetworking */,
 			);
 			path = Lib;
@@ -548,6 +557,18 @@
 				6943909019E03B9100BE32BF /* RWAccountTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		6943909819E0F1C700BE32BF /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6943909B19E0F1ED00BE32BF /* MBProgressHUD.h */,
+				6943909C19E0F1ED00BE32BF /* MBProgressHUD.m */,
+				6943909D19E0F1ED00BE32BF /* MBProgressHUD+MJ.h */,
+				6943909E19E0F1ED00BE32BF /* MBProgressHUD+MJ.m */,
+				6943909919E0F1C700BE32BF /* MBProgressHUD.bundle */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -628,6 +649,7 @@
 			files = (
 				6908739F19D41EB300F2568F /* InfoPlist.strings in Resources */,
 				690873A719D41EB300F2568F /* Images.xcassets in Resources */,
+				6943909A19E0F1C700BE32BF /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,8 +688,10 @@
 				6943908719DFF02200BE32BF /* RWAccount.m in Sources */,
 				6943908019DEFE2600BE32BF /* AFURLConnectionOperation.m in Sources */,
 				6943908D19E00B3E00BE32BF /* RWWeiboTool.m in Sources */,
+				694390A019E0F1ED00BE32BF /* MBProgressHUD+MJ.m in Sources */,
 				6943908119DEFE2600BE32BF /* AFURLRequestSerialization.m in Sources */,
 				6943908319DEFE2600BE32BF /* AFURLSessionManager.m in Sources */,
+				6943909F19E0F1ED00BE32BF /* MBProgressHUD.m in Sources */,
 				6943908219DEFE2600BE32BF /* AFURLResponseSerialization.m in Sources */,
 				690873FF19D56C3F00F2568F /* RWDiscoverViewController.m in Sources */,
 				6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */,
