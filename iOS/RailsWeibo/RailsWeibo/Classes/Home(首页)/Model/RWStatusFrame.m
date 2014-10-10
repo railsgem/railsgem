@@ -10,9 +10,6 @@
 #import "RWStatus.h"
 #import "RWUser.h"
 
-/** cell的边框宽度 */
-#define RWStatusCellBorder 5
-
 @implementation RWStatusFrame
 
 /**
@@ -23,10 +20,11 @@
     _status = status;
     
     // cell的宽度
-    CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat cellW = [UIScreen mainScreen].bounds.size.width - 2 * RWStatusTableBorder;
     
     // 1.topView
     CGFloat topViewW = cellW;
+    CGFloat topViewH = 0;
     CGFloat topViewX = 0;
     CGFloat topViewY = 0;
     
@@ -43,7 +41,7 @@
     _nameLabelF = (CGRect){{nameLabelX, nameLabelY}, nameLabelSize};
     
     // 4.会员图标
-    if (status.user.isVip) {
+    if (status.user.mbtype) {
         CGFloat vipViewW = 14;
         CGFloat vipViewH = nameLabelSize.height;
         CGFloat vipViewX = CGRectGetMaxX(_nameLabelF) + RWStatusCellBorder;
@@ -70,11 +68,70 @@
     CGSize contentLabelSize = [status.text sizeWithFont:RWStatusContentFont constrainedToSize:CGSizeMake(contentLabelMaxW, MAXFLOAT)];
     _contentLabelF = (CGRect){{contentLabelX, contentLabelY}, contentLabelSize};
     
-    // 计算topViewF
-    CGFloat topViewH = CGRectGetMaxY(_contentLabelF) + RWStatusCellBorder;
+    // 8.配图
+    if (status.pic_urls.count) {
+        CGFloat photoViewWH = 70;
+        CGFloat photoViewX = contentLabelX;
+        CGFloat photoViewY = CGRectGetMaxY(_contentLabelF) + RWStatusCellBorder;
+        _photoViewF = CGRectMake(photoViewX, photoViewY, photoViewWH, photoViewWH);
+    }
+    
+    // 9.被转发微博
+    if (status.retweeted_status) {
+        CGFloat retweetViewW = contentLabelMaxW;
+        CGFloat retweetViewX = contentLabelX;
+        CGFloat retweetViewY = CGRectGetMaxY(_contentLabelF) + RWStatusCellBorder * 0.5;
+        CGFloat retweetViewH = 0;
+        
+        // 10.被转发微博的昵称
+        CGFloat retweetNameLabelX = RWStatusCellBorder;
+        CGFloat retweetNameLabelY = RWStatusCellBorder;
+        NSString *name = [NSString stringWithFormat:@"@%@", status.retweeted_status.user.name];
+        CGSize retweetNameLabelSize = [name sizeWithFont:RWRetweetStatusNameFont];
+        _retweetNameLabelF = (CGRect){{retweetNameLabelX, retweetNameLabelY}, retweetNameLabelSize};
+        
+        // 11.被转发微博的正文
+        CGFloat retweetContentLabelX = retweetNameLabelX;
+        CGFloat retweetContentLabelY = CGRectGetMaxY(_retweetNameLabelF) + RWStatusCellBorder * 0.5;
+        CGFloat retweetContentLabelMaxW = retweetViewW - 2 * RWStatusCellBorder;
+        CGSize retweetContentLabelSize = [status.retweeted_status.text sizeWithFont:RWRetweetStatusContentFont constrainedToSize:CGSizeMake(retweetContentLabelMaxW, MAXFLOAT)];
+        _retweetContentLabelF = (CGRect){{retweetContentLabelX, retweetContentLabelY}, retweetContentLabelSize};
+        
+        // 12.被转发微博的配图
+        if(status.retweeted_status.pic_urls.count) {
+            CGFloat retweetPhotoViewWH = 70;
+            CGFloat retweetPhotoViewX = retweetContentLabelX;
+            CGFloat retweetPhotoViewY = CGRectGetMaxY(_retweetContentLabelF) + RWStatusCellBorder;
+            _retweetPhotoViewF = CGRectMake(retweetPhotoViewX, retweetPhotoViewY, retweetPhotoViewWH, retweetPhotoViewWH);
+            
+            retweetViewH = CGRectGetMaxY(_retweetPhotoViewF);
+        } else { // 没有配图
+            retweetViewH = CGRectGetMaxY(_retweetContentLabelF);
+        }
+        retweetViewH += RWStatusCellBorder;
+        _retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
+        
+        // 有转发微博时topViewH
+        topViewH = CGRectGetMaxY(_retweetViewF);
+    } else { // 没有转发微博
+        if (status.pic_urls.count) { // 有图
+            topViewH = CGRectGetMaxY(_photoViewF);
+        } else { // 无图
+            topViewH = CGRectGetMaxY(_contentLabelF);
+        }
+    }
+    topViewH += RWStatusCellBorder;
     _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
-    // 计算cell的高度
-    _cellHeight = topViewH;
+    
+    // 13.工具条
+    CGFloat statusToolbarX = topViewX;
+    CGFloat statusToolbarY = CGRectGetMaxY(_topViewF);
+    CGFloat statusToolbarW = topViewW;
+    CGFloat statusToolbarH = 35;
+    _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
+    
+    // 14.cell的高度
+    _cellHeight = CGRectGetMaxY(_statusToolbarF) + RWStatusTableBorder;
 }
 @end

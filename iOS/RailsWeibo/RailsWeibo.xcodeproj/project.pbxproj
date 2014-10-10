@@ -31,6 +31,11 @@
 		6908740C19D596EF00F2568F /* RWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6908740B19D596EF00F2568F /* RWTabBar.m */; };
 		690A834C19E565840042F74D /* RWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A834B19E565840042F74D /* RWStatusCell.m */; };
 		690A834F19E67A390042F74D /* RWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A834E19E67A390042F74D /* RWStatusFrame.m */; };
+		690A835219E777750042F74D /* RWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A835119E777750042F74D /* RWPhoto.m */; };
+		690A837119E779700042F74D /* NSDate+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A837019E779700042F74D /* NSDate+CY.m */; };
+		690A837419E77C060042F74D /* RWReweetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A837319E77C060042F74D /* RWReweetStatusView.m */; };
+		690A837719E77F060042F74D /* RWStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A837619E77F060042F74D /* RWStatusTopView.m */; };
+		690A837A19E781E60042F74D /* RWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A837919E781E60042F74D /* RWStatusToolbar.m */; };
 		6943905D19DE36FD00BE32BF /* RWNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */; };
 		6943906019DE468100BE32BF /* RWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905F19DE468100BE32BF /* RWPageControl.m */; };
 		6943906519DEA68800BE32BF /* RWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943906419DEA68800BE32BF /* RWOAuthViewController.m */; };
@@ -130,6 +135,16 @@
 		690A834B19E565840042F74D /* RWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusCell.m; sourceTree = "<group>"; };
 		690A834D19E67A390042F74D /* RWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusFrame.h; sourceTree = "<group>"; };
 		690A834E19E67A390042F74D /* RWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusFrame.m; sourceTree = "<group>"; };
+		690A835019E777750042F74D /* RWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPhoto.h; sourceTree = "<group>"; };
+		690A835119E777750042F74D /* RWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPhoto.m; sourceTree = "<group>"; };
+		690A836F19E779700042F74D /* NSDate+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CY.h"; sourceTree = "<group>"; };
+		690A837019E779700042F74D /* NSDate+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CY.m"; sourceTree = "<group>"; };
+		690A837219E77C060042F74D /* RWReweetStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWReweetStatusView.h; sourceTree = "<group>"; };
+		690A837319E77C060042F74D /* RWReweetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWReweetStatusView.m; sourceTree = "<group>"; };
+		690A837519E77F060042F74D /* RWStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusTopView.h; sourceTree = "<group>"; };
+		690A837619E77F060042F74D /* RWStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusTopView.m; sourceTree = "<group>"; };
+		690A837819E781E60042F74D /* RWStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusToolbar.h; sourceTree = "<group>"; };
+		690A837919E781E60042F74D /* RWStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusToolbar.m; sourceTree = "<group>"; };
 		6943905B19DE36FD00BE32BF /* RWNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNewfeatureViewController.h; sourceTree = "<group>"; };
 		6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNewfeatureViewController.m; sourceTree = "<group>"; };
 		6943905E19DE468100BE32BF /* RWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPageControl.h; sourceTree = "<group>"; };
@@ -395,6 +410,8 @@
 				694390D119E165F500BE32BF /* RWUser.m */,
 				690A834D19E67A390042F74D /* RWStatusFrame.h */,
 				690A834E19E67A390042F74D /* RWStatusFrame.m */,
+				690A835019E777750042F74D /* RWPhoto.h */,
+				690A835119E777750042F74D /* RWPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,6 +423,12 @@
 				69006D4F19DDA12500B0CB4D /* RWTitleButton.m */,
 				690A834A19E565840042F74D /* RWStatusCell.h */,
 				690A834B19E565840042F74D /* RWStatusCell.m */,
+				690A837219E77C060042F74D /* RWReweetStatusView.h */,
+				690A837319E77C060042F74D /* RWReweetStatusView.m */,
+				690A837519E77F060042F74D /* RWStatusTopView.h */,
+				690A837619E77F060042F74D /* RWStatusTopView.m */,
+				690A837819E781E60042F74D /* RWStatusToolbar.h */,
+				690A837919E781E60042F74D /* RWStatusToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,6 +562,8 @@
 				6908740819D56EBB00F2568F /* UIImage+CY.m */,
 				69006D4819DD623C00B0CB4D /* UIBarButtonItem+CY.h */,
 				69006D4919DD623C00B0CB4D /* UIBarButtonItem+CY.m */,
+				690A836F19E779700042F74D /* NSDate+CY.h */,
+				690A837019E779700042F74D /* NSDate+CY.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -846,6 +871,7 @@
 				6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */,
 				694390EC19E1818800BE32BF /* MJTypeEncoding.m in Sources */,
 				694390E919E1818800BE32BF /* MJMember.m in Sources */,
+				690A837719E77F060042F74D /* RWStatusTopView.m in Sources */,
 				694390C219E1244800BE32BF /* SDWebImageCompat.m in Sources */,
 				694390C419E1244800BE32BF /* SDWebImageDownloader.m in Sources */,
 				694390C519E1244800BE32BF /* SDWebImageDownloaderOperation.m in Sources */,
@@ -853,17 +879,20 @@
 				694390C319E1244800BE32BF /* SDWebImageDecoder.m in Sources */,
 				694390C619E1244800BE32BF /* SDWebImageManager.m in Sources */,
 				6908740219D56C3F00F2568F /* RWTabBarViewController.m in Sources */,
+				690A837119E779700042F74D /* NSDate+CY.m in Sources */,
 				6943907D19DEFE2600BE32BF /* AFHTTPSessionManager.m in Sources */,
 				6908740319D56C3F00F2568F /* RWMeViewController.m in Sources */,
 				69006D4A19DD623C00B0CB4D /* UIBarButtonItem+CY.m in Sources */,
 				6943908719DFF02200BE32BF /* RWAccount.m in Sources */,
 				6943908019DEFE2600BE32BF /* AFURLConnectionOperation.m in Sources */,
+				690A835219E777750042F74D /* RWPhoto.m in Sources */,
 				6943908D19E00B3E00BE32BF /* RWWeiboTool.m in Sources */,
 				694390A019E0F1ED00BE32BF /* MBProgressHUD+MJ.m in Sources */,
 				6943908119DEFE2600BE32BF /* AFURLRequestSerialization.m in Sources */,
 				6943908319DEFE2600BE32BF /* AFURLSessionManager.m in Sources */,
 				694390BF19E1244800BE32BF /* MKAnnotationView+WebCache.m in Sources */,
 				694390CA19E1244800BE32BF /* UIImage+MultiFormat.m in Sources */,
+				690A837A19E781E60042F74D /* RWStatusToolbar.m in Sources */,
 				694390EA19E1818800BE32BF /* MJMethod.m in Sources */,
 				694390ED19E1818800BE32BF /* NSObject+MJCoding.m in Sources */,
 				6943909F19E0F1ED00BE32BF /* MBProgressHUD.m in Sources */,
@@ -882,6 +911,7 @@
 				694390CC19E1244800BE32BF /* UIImageView+WebCache.m in Sources */,
 				694390EB19E1818800BE32BF /* MJType.m in Sources */,
 				694390C119E1244800BE32BF /* SDImageCache.m in Sources */,
+				690A837419E77C060042F74D /* RWReweetStatusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -98,8 +98,7 @@
  *  设置导航栏内容
  */
 - (void)setupNavBar
-{
-    // 左边按钮
+{// 左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
     
     // 右边按钮
@@ -110,12 +109,14 @@
     // 图标
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     // 文字
-    [titleButton setTitle:@"啊哈哈哈" forState:UIControlStateNormal];
-    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [titleButton setTitle:@"哈哈哈哈" forState:UIControlStateNormal];
     // 位置和尺寸
-    titleButton.frame = CGRectMake(0, 0, 100, 40 );
+    titleButton.frame = CGRectMake(0, 0, 100, 40);
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    
+    self.tableView.backgroundColor = RWColor(226, 226, 226);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, RWStatusTableBorder, 0);
 }
 
 - (void)titleClick:(RWTitleButton *)titleButton

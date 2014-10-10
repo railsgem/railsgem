@@ -20,6 +20,6 @@
 /**
  *  返回一张自由拉伸的图片
  */
-+(UIImage *)resizedImageWithName:(NSString *)name;
-
++ (UIImage *)resizedImageWithName:(NSString *)name;
++ (UIImage *)resizedImageWithName:(NSString *)name left:(CGFloat)left top:(CGFloat)top;
 @end
