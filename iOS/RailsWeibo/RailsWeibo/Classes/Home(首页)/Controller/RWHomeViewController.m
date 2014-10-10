@@ -17,12 +17,14 @@
 #import "RWUser.h"
 #import "RWStatus.h"
 #import "MJExtension.h"
+#import "RWStatusFrame.h"
+#import "RWStatusCell.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
 
 @interface RWHomeViewController ()
-@property (nonatomic,strong) NSArray *statuses;
+@property (nonatomic,strong) NSArray *statusFrames;
 @end
 
 @implementation RWHomeViewController
@@ -54,20 +56,35 @@
     
     // 发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // 取出所有微博数据(每一条微博都是一个字典)
-        NSArray *dictArray = responseObject[@"statuses"];
+//        // 取出所有微博数据(每一条微博都是一个字典)
+//        NSArray *dictArray = responseObject[@"statuses"];
+//        
+////        // 将字典数据转为模型数据
+////        NSMutableArray *statusArray = [NSMutableArray array];
+////        for (NSDictionary *dict in dictArray) {
+////            // 创建模型
+////            RWStatus *status = [RWStatus objectWithKeyValues:dict];
+////            
+////            // 添加模型
+////            [statusArray addObject:status];
+////        }
+//        
+//        self.statuses = [RWStatus objectArrayWithKeyValuesArray:dictArray];
+//
+        // 将字典数组转为模型数组(里面放的就是RWStatus模型)
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
-//        // 将字典数据转为模型数据
-//        NSMutableArray *statusArray = [NSMutableArray array];
-//        for (NSDictionary *dict in dictArray) {
-//            // 创建模型
-//            RWStatus *status = [RWStatus objectWithKeyValues:dict];
-//            
-//            // 添加模型
-//            [statusArray addObject:status];
-//        }
+        // 创建frame模型对象
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (RWStatus *status in statusArray) {
+            RWStatusFrame *statusFrame = [[RWStatusFrame alloc] init];
+            // 传递微博模型数据
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
         
-        self.statuses = [RWStatus objectArrayWithKeyValuesArray:dictArray];
+        // 赋值
+        self.statusFrames = statusFrameArray;
         
         // 刷新表格
         [self.tableView reloadData];
@@ -125,38 +142,26 @@
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.statuses.count;
+    return self.statusFrames.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //创建cell
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
     
-    //设置cell的数据
-    // 微博的文字内容
-    RWStatus *status = self.statuses[indexPath.row];
-    cell.textLabel.text = status.text;
+    // 1.创建cell
+    RWStatusCell *cell = [RWStatusCell cellWithTableView:tableView];
     
-    // 微博作者昵称
-    RWUser *user = status.user;
-    cell.detailTextLabel.text = user.name;
-    
-    // 微博作者的头像
-    [cell.imageView setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageWithName:@"hot_status"]];
+    // 2.传递frame模型
+    cell.statusFrame = self.statusFrames[indexPath.row];
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - 代理方法
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor redColor];
-    [self.navigationController pushViewController:vc animated:YES];
+    RWStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    return statusFrame.cellHeight;
 }
 
 @end

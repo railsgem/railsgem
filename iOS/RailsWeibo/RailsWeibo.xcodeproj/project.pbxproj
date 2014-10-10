@@ -29,6 +29,8 @@
 		6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690873FE19D56C3F00F2568F /* RWAppDelegate.m */; };
 		6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 6908740819D56EBB00F2568F /* UIImage+CY.m */; };
 		6908740C19D596EF00F2568F /* RWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6908740B19D596EF00F2568F /* RWTabBar.m */; };
+		690A834C19E565840042F74D /* RWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A834B19E565840042F74D /* RWStatusCell.m */; };
+		690A834F19E67A390042F74D /* RWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A834E19E67A390042F74D /* RWStatusFrame.m */; };
 		6943905D19DE36FD00BE32BF /* RWNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */; };
 		6943906019DE468100BE32BF /* RWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905F19DE468100BE32BF /* RWPageControl.m */; };
 		6943906519DEA68800BE32BF /* RWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943906419DEA68800BE32BF /* RWOAuthViewController.m */; };
@@ -124,6 +126,10 @@
 		6908740819D56EBB00F2568F /* UIImage+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CY.m"; sourceTree = "<group>"; };
 		6908740A19D596EF00F2568F /* RWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTabBar.h; sourceTree = "<group>"; };
 		6908740B19D596EF00F2568F /* RWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTabBar.m; sourceTree = "<group>"; };
+		690A834A19E565840042F74D /* RWStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusCell.h; sourceTree = "<group>"; };
+		690A834B19E565840042F74D /* RWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusCell.m; sourceTree = "<group>"; };
+		690A834D19E67A390042F74D /* RWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusFrame.h; sourceTree = "<group>"; };
+		690A834E19E67A390042F74D /* RWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusFrame.m; sourceTree = "<group>"; };
 		6943905B19DE36FD00BE32BF /* RWNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNewfeatureViewController.h; sourceTree = "<group>"; };
 		6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNewfeatureViewController.m; sourceTree = "<group>"; };
 		6943905E19DE468100BE32BF /* RWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPageControl.h; sourceTree = "<group>"; };
@@ -387,6 +393,8 @@
 				694390CE19E15EB800BE32BF /* RWStatus.m */,
 				694390D019E165F500BE32BF /* RWUser.h */,
 				694390D119E165F500BE32BF /* RWUser.m */,
+				690A834D19E67A390042F74D /* RWStatusFrame.h */,
+				690A834E19E67A390042F74D /* RWStatusFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +404,8 @@
 			children = (
 				69006D4E19DDA12500B0CB4D /* RWTitleButton.h */,
 				69006D4F19DDA12500B0CB4D /* RWTitleButton.m */,
+				690A834A19E565840042F74D /* RWStatusCell.h */,
+				690A834B19E565840042F74D /* RWStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -830,6 +840,7 @@
 				6908740419D56C3F00F2568F /* RWMessageViewController.m in Sources */,
 				694390C919E1244800BE32BF /* UIImage+GIF.m in Sources */,
 				694390C719E1244800BE32BF /* SDWebImagePrefetcher.m in Sources */,
+				690A834F19E67A390042F74D /* RWStatusFrame.m in Sources */,
 				6943906019DE468100BE32BF /* RWPageControl.m in Sources */,
 				6943905D19DE36FD00BE32BF /* RWNewfeatureViewController.m in Sources */,
 				6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */,
@@ -863,6 +874,7 @@
 				6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */,
 				69006D4D19DD85A500B0CB4D /* RWSearchBar.m in Sources */,
 				6908740C19D596EF00F2568F /* RWTabBar.m in Sources */,
+				690A834C19E565840042F74D /* RWStatusCell.m in Sources */,
 				6908740519D56C3F00F2568F /* main.m in Sources */,
 				694390D219E165F500BE32BF /* RWUser.m in Sources */,
 				6943907E19DEFE2600BE32BF /* AFNetworkReachabilityManager.m in Sources */,
