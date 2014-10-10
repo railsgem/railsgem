@@ -12,6 +12,7 @@
 #import "RWStatusFrame.h"
 #import "RWPhoto.h"
 #import "UIImageView+WebCache.h"
+#import "RWPhotosView.h"
 
 @interface RWReweetStatusView()
 /** 被转发微博作者的昵称 */
@@ -19,7 +20,7 @@
 /** 被转发微博的正文\内容 */
 @property (nonatomic, weak) UILabel *retweetContentLabel;
 /** 被转发微博的配图 */
-@property (nonatomic, weak) UIImageView *retweetPhotoView;
+@property (nonatomic, weak) RWPhotosView *retweetPhotosView;
 @end
 
 @implementation RWReweetStatusView
@@ -29,6 +30,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // 1.设置图片
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizedImageWithName:@"timeline_retweet_background" left:0.9 top:0.5];
         
         /** 2.被转发微博作者的昵称 */
@@ -49,9 +51,9 @@
         self.retweetContentLabel = retweetContentLabel;
         
         /** 4.被转发微博的配图 */
-        UIImageView *retweetPhotoView = [[UIImageView alloc] init];
-        [self addSubview:retweetPhotoView];
-        self.retweetPhotoView = retweetPhotoView;
+        RWPhotosView *retweetPhotosView = [[RWPhotosView alloc] init];
+        [self addSubview:retweetPhotosView];
+        self.retweetPhotosView = retweetPhotosView;
     }
     return self;
 }
@@ -73,14 +75,11 @@
     
     // 3.配图
     if (retweetStatus.pic_urls.count) {
-        self.retweetPhotoView.hidden = NO;
-        self.retweetPhotoView.frame = self.statusFrame.retweetPhotoViewF;
-        
-        RWPhoto *photo = retweetStatus.pic_urls[0];
-        
-        [self.retweetPhotoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        self.retweetPhotosView.hidden = NO;
+        self.retweetPhotosView.frame = self.statusFrame.retweetPhotosViewF;
+        self.retweetPhotosView.photos = retweetStatus.pic_urls;
     } else {
-        self.retweetPhotoView.hidden = YES;
+        self.retweetPhotosView.hidden = YES;
     }
 }
 @end

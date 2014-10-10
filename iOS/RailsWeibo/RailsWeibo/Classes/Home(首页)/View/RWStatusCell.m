@@ -56,7 +56,8 @@
 {
     // 0.设置cell选中时的背景
     self.selectedBackgroundView = [[UIView alloc] init];
-    
+    self.backgroundColor = [UIColor clearColor];
+
     /** 1.顶部的view */
     RWStatusTopView *topView = [[RWStatusTopView alloc] init];
     [self.contentView addSubview:topView];

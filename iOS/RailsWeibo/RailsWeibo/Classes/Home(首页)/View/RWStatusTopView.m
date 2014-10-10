@@ -43,7 +43,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // 1.设置图片
-        
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizedImageWithName:@"timeline_card_top_background"];
         self.highlightedImage = [UIImage resizedImageWithName:@"timeline_card_top_background_highlighted"];
         
@@ -154,7 +154,7 @@
     // 8.配图
     if (status.pic_urls.count) {
         self.photoView.hidden = NO;
-        self.photoView.frame = self.statusFrame.photoViewF;
+        self.photoView.frame = self.statusFrame.photosViewF;
         RWPhoto *photo = status.pic_urls[0];
         [self.photoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
     } else {
