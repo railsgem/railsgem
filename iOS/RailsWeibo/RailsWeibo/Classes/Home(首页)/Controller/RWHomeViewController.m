@@ -24,21 +24,102 @@
 #define RWTitleButtonUpTag -1
 
 @interface RWHomeViewController ()
-@property (nonatomic,strong) NSArray *statusFrames;
+@property (nonatomic,strong) NSMutableArray *statusFrames;
 @end
 
 @implementation RWHomeViewController
+
+-(NSMutableArray *)statusFrames
+{
+    if (_statusFrames == nil) {
+        _statusFrames = [NSMutableArray array];
+    }
+    return _statusFrames;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    // 0.集成刷新控件
+    [self setupRefreshView];
+    
     // 1.设置导航栏内容
     [self setupNavBar];
     
     // 2.加载微博数据
-    [self setupStatusData];
+//    [self setupStatusData];
 }
+
+/**
+ *  集成刷新控件
+ */
+-(void)setupRefreshView
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    // 监听刷新控件的改变状态
+    [refreshControl addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    
+    // 自动进入刷新状态（不会触发监听方法）
+    [refreshControl beginRefreshing];
+    
+    // 直接加载数据
+    [self refreshControlStateChange:refreshControl];
+}
+
+- (void)refreshControlStateChange:(UIRefreshControl *)refreshControl
+{
+    // 刷新数据（向新浪获取更新的数据）
+    // 创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    params[@"count"] = @5;
+    
+    if (self.statusFrames.count) {
+        RWStatusFrame *statusFrame = self.statusFrames[0];
+        // 加载ID比since_id大的微博
+        params[@"since_id"] = statusFrame.status.idstr;
+    }
+    
+    // 发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // 将字典数组转为模型数组(里面放的就是RWStatus模型)
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        // 创建frame模型对象
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (RWStatus *status in statusArray) {
+            RWStatusFrame *statusFrame = [[RWStatusFrame alloc] init];
+            // 传递微博模型数据
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
+        
+        // 将最新的数据追加到旧数据的最前面
+        NSMutableArray *tempArray = [NSMutableArray array];
+        [tempArray addObjectsFromArray:statusFrameArray];
+        [tempArray addObjectsFromArray:self.statusFrames];
+        self.statusFrames = tempArray;
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 让刷新控件停止显示刷新状态
+        [refreshControl endRefreshing];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 让刷新控件停止显示刷新状态
+        [refreshControl endRefreshing];
+        
+    }];
+    
+}
+
 
 /**
  *  加载微博数据
@@ -116,7 +197,7 @@
     self.navigationItem.titleView = titleButton;
     
     self.tableView.backgroundColor = RWColor(226, 226, 226);
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, RWStatusTableBorder, 0);
+//    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, RWStatusTableBorder, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
