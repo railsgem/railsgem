@@ -19,13 +19,16 @@
 #import "MJExtension.h"
 #import "RWStatusFrame.h"
 #import "RWStatusCell.h"
+#import "MJRefresh.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
 
-@interface RWHomeViewController ()
+@interface RWHomeViewController ()<MJRefreshBaseViewDelegate>
 @property (nonatomic, weak) RWTitleButton *titleButton;
 @property (nonatomic,strong) NSMutableArray *statusFrames;
+@property (nonatomic, weak) MJRefreshFooterView *footer;
+@property (nonatomic, weak) MJRefreshHeaderView *header;
 @end
 
 @implementation RWHomeViewController
@@ -51,8 +54,6 @@
     // 2.获得用户信息
     [self setupUserData];
     
-    // 2.加载微博数据
-//    [self setupStatusData];
 }
 
 - (void)setupUserData
@@ -88,16 +89,149 @@
  */
 -(void)setupRefreshView
 {
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    // 监听刷新控件的改变状态
-    [refreshControl addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:refreshControl];
+    // 1.下拉刷新
     
+    MJRefreshHeaderView *header = [MJRefreshHeaderView header];
+    header.scrollView = self.tableView;
+    header.delegate = self;
     // 自动进入刷新状态（不会触发监听方法）
-    [refreshControl beginRefreshing];
+    [header beginRefreshing];
+    self.header = header;
     
-    // 直接加载数据
-    [self refreshControlStateChange:refreshControl];
+    
+    // 2.上拉刷新（上拉加载更多数据）
+    MJRefreshFooterView *footer = [MJRefreshFooterView footer];
+    footer.scrollView = self.tableView;
+    footer.delegate = self;
+    self.footer = footer;
+}
+
+- (void)dealloc
+{
+    // 释放内存
+    [self.header free];
+    [self.footer free];
+}
+
+/**
+ *  刷新控件进入开始刷新状态的时候调用
+ */
+-(void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView
+{
+    if ([refreshView isKindOfClass:[MJRefreshFooterView class]]) {
+        [self loadMoreData];
+    } else {
+        [self loadNewData];
+    }
+}
+
+/**
+ *  发送请求加载更多的微博数据
+ */
+-(void)loadMoreData
+{
+    
+    // 创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    params[@"count"] = @10;
+    
+    if (self.statusFrames.count) {
+        RWStatusFrame *statusFrame = self.statusFrames[0];
+        // 加载ID比since_id大的微博
+        long long maxId = [statusFrame.status.idstr longLongValue] -1 ;
+        params[@"max_id"] = @(maxId);
+    }
+    
+    // 发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // 将字典数组转为模型数组(里面放的就是RWStatus模型)
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        // 创建frame模型对象
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (RWStatus *status in statusArray) {
+            RWStatusFrame *statusFrame = [[RWStatusFrame alloc] init];
+            // 传递微博模型数据
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
+        
+        // 将最新的数据追加到旧数据的后面
+        [self.statusFrames addObjectsFromArray:statusFrameArray];
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 让刷新控件停止显示刷新状态
+        [self.footer endRefreshing];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // 让刷新控件停止显示刷新状态
+        [self.footer endRefreshing];
+        
+    }];
+
+}
+
+-(void)loadNewData
+{
+    
+    // 刷新数据（向新浪获取更新的数据）
+    // 创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    params[@"count"] = @10;
+    
+    if (self.statusFrames.count) {
+        RWStatusFrame *statusFrame = self.statusFrames[0];
+        // 加载ID比since_id大的微博
+        params[@"since_id"] = statusFrame.status.idstr;
+    }
+    
+    // 发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // 将字典数组转为模型数组(里面放的就是RWStatus模型)
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        // 创建frame模型对象
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (RWStatus *status in statusArray) {
+            RWStatusFrame *statusFrame = [[RWStatusFrame alloc] init];
+            // 传递微博模型数据
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
+        
+        // 将最新的数据追加到旧数据的最前面
+        NSMutableArray *tempArray = [NSMutableArray array];
+        [tempArray addObjectsFromArray:statusFrameArray];
+        [tempArray addObjectsFromArray:self.statusFrames];
+        self.statusFrames = tempArray;
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 让刷新控件停止显示刷新状态
+        [self.header endRefreshing];
+        
+        // 显示最新的微博数量（提醒）
+        [self showNewStatusCount:statusFrameArray.count];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 让刷新控件停止显示刷新状态
+        [self.header endRefreshing];
+        
+    }];
+
 }
 
 - (void)refreshControlStateChange:(UIRefreshControl *)refreshControl
@@ -109,7 +243,7 @@
     // 封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
-    params[@"count"] = @20;
+    params[@"count"] = @10;
     
     if (self.statusFrames.count) {
         RWStatusFrame *statusFrame = self.statusFrames[0];
@@ -286,7 +420,7 @@
     self.titleButton = titleButton;
     
     self.tableView.backgroundColor = RWColor(226, 226, 226);
-//    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, RWStatusTableBorder, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, RWStatusTableBorder, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
