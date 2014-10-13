@@ -13,10 +13,6 @@
 #import "MJPhoto.h"
 //#import "DXAlertView.h"
 
-#define RWPhotoW 70
-#define RWPhotoH 70
-#define RWPhotoMargin 10
-
 @implementation RWPhotosView
 
 - (id)initWithFrame:(CGRect)frame

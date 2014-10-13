@@ -8,27 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-/** 昵称的字体 */
-#define RWStatusNameFont [UIFont systemFontOfSize:15]
-/** 被转发微博作者昵称的字体 */
-#define RWRetweetStatusNameFont RWStatusNameFont
-
-/** 时间的字体 */
-#define RWStatusTimeFont [UIFont systemFontOfSize:12]
-/** 来源的字体 */
-#define RWStatusSourceFont RWStatusTimeFont
-
-/** 正文的字体 */
-#define RWStatusContentFont [UIFont systemFontOfSize:13]
-/** 被转发微博正文的字体 */
-#define RWRetweetStatusContentFont RWStatusContentFont
-
-/** 表格的边框宽度 */
-#define RWStatusTableBorder 5
-
-/** cell的边框宽度 */
-#define RWStatusCellBorder 10
-
 @class RWStatus;
 @interface RWStatusFrame : NSObject
 

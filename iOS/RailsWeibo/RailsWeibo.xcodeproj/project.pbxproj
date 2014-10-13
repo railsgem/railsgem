@@ -51,6 +51,9 @@
 		690A83A619EBB0F00042F74D /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A839F19EBB0F00042F74D /* MJRefreshConst.m */; };
 		690A83A719EBB0F00042F74D /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A83A119EBB0F00042F74D /* MJRefreshFooterView.m */; };
 		690A83A819EBB0F00042F74D /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A83A319EBB0F00042F74D /* MJRefreshHeaderView.m */; };
+		690A83AC19EBC3600042F74D /* new_feature_1-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 690A83A919EBC3600042F74D /* new_feature_1-568h@2x.png */; };
+		690A83AD19EBC3600042F74D /* new_feature_2-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 690A83AA19EBC3600042F74D /* new_feature_2-568h@2x.png */; };
+		690A83AE19EBC3600042F74D /* new_feature_3-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 690A83AB19EBC3600042F74D /* new_feature_3-568h@2x.png */; };
 		6943905D19DE36FD00BE32BF /* RWNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */; };
 		6943906019DE468100BE32BF /* RWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905F19DE468100BE32BF /* RWPageControl.m */; };
 		6943906519DEA68800BE32BF /* RWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943906419DEA68800BE32BF /* RWOAuthViewController.m */; };
@@ -189,6 +192,10 @@
 		690A83A119EBB0F00042F74D /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
 		690A83A219EBB0F00042F74D /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
 		690A83A319EBB0F00042F74D /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		690A83A919EBC3600042F74D /* new_feature_1-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_feature_1-568h@2x.png"; sourceTree = "<group>"; };
+		690A83AA19EBC3600042F74D /* new_feature_2-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_feature_2-568h@2x.png"; sourceTree = "<group>"; };
+		690A83AB19EBC3600042F74D /* new_feature_3-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_feature_3-568h@2x.png"; sourceTree = "<group>"; };
+		690A83B019EBC8E00042F74D /* RWCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWCommon.h; sourceTree = "<group>"; };
 		6943905B19DE36FD00BE32BF /* RWNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNewfeatureViewController.h; sourceTree = "<group>"; };
 		6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNewfeatureViewController.m; sourceTree = "<group>"; };
 		6943905E19DE468100BE32BF /* RWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPageControl.h; sourceTree = "<group>"; };
@@ -351,6 +358,9 @@
 		6908739B19D41EB300F2568F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				690A83A919EBC3600042F74D /* new_feature_1-568h@2x.png */,
+				690A83AA19EBC3600042F74D /* new_feature_2-568h@2x.png */,
+				690A83AB19EBC3600042F74D /* new_feature_3-568h@2x.png */,
 				690873A619D41EB300F2568F /* Images.xcassets */,
 				6908739C19D41EB300F2568F /* RailsWeibo-Info.plist */,
 				6908739D19D41EB300F2568F /* InfoPlist.strings */,
@@ -599,6 +609,7 @@
 				690873FE19D56C3F00F2568F /* RWAppDelegate.m */,
 				6943908B19E00B3E00BE32BF /* RWWeiboTool.h */,
 				6943908C19E00B3E00BE32BF /* RWWeiboTool.m */,
+				690A83B019EBC8E00042F74D /* RWCommon.h */,
 			);
 			path = "Other(其他)";
 			sourceTree = "<group>";
@@ -920,7 +931,10 @@
 				690873A719D41EB300F2568F /* Images.xcassets in Resources */,
 				690A839219E7FEBA0042F74D /* MJPhotoBrowser.bundle in Resources */,
 				690A83A419EBB0F00042F74D /* MJRefresh.bundle in Resources */,
+				690A83AD19EBC3600042F74D /* new_feature_2-568h@2x.png in Resources */,
+				690A83AE19EBC3600042F74D /* new_feature_3-568h@2x.png in Resources */,
 				6943909A19E0F1C700BE32BF /* MBProgressHUD.bundle in Resources */,
+				690A83AC19EBC3600042F74D /* new_feature_1-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

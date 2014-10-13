@@ -30,7 +30,7 @@
     [self.view addSubview:webView];
     
     // 2.加载授权页面
-    NSURL *url = [NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=3072959680&redirect_uri=https://api.weibo.com/oauth2/default.html"];
+    NSURL *url = [NSURL URLWithString:IWLoginURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
     
@@ -82,6 +82,7 @@
         // 5.发送POST请求给新浪，通过code换取一个accessToken
         [self accessTokenWithCode:code];
         
+        return NO;
         
     }
     
@@ -106,11 +107,11 @@
     
     // 封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"client_id"] = @"3072959680";
-    params[@"client_secret"] = @"8fb802d3984f4601cb3683bf232bda83";
+    params[@"client_id"] = IWAppKey;
+    params[@"client_secret"] = IWAppSecret;
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
-    params[@"redirect_uri"] = @"https://api.weibo.com/oauth2/default.html";
+    params[@"redirect_uri"] = IWRedirectURI;
 
     
     // 发送请求

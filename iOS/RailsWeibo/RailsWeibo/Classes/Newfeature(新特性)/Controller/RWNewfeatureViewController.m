@@ -81,13 +81,18 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         
         // 设置图片
-        NSString *name = [NSString stringWithFormat:@"new_feature_%d", index + 1];
-        CGFloat imageX = imageW * index;
-        
-        // 设置frame
-        imageView.frame = CGRectMake(imageX, 0, imageW, imageH);
+        NSString *name = nil;
+        if (fourInch) { // 4inch
+            name = [NSString stringWithFormat:@"new_feature_%d-568h", index + 1];
+        } else {
+            name = [NSString stringWithFormat:@"new_feature_%d", index + 1];
+        }
         imageView.image = [UIImage imageWithName:name];
         
+        // 设置frame
+        CGFloat imageX = index * imageW;
+        imageView.frame = CGRectMake(imageX, 0, imageW, imageH);
+                
         [scrollView addSubview:imageView];
         
         // 在最后一个图片上添加按钮

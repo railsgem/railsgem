@@ -179,7 +179,6 @@
 
 -(void)loadNewData
 {
-    
     // 刷新数据（向新浪获取更新的数据）
     // 创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
@@ -215,6 +214,7 @@
         [tempArray addObjectsFromArray:self.statusFrames];
         self.statusFrames = tempArray;
         
+        
         // 刷新表格
         [self.tableView reloadData];
         
@@ -222,7 +222,7 @@
         [self.header endRefreshing];
         
         // 显示最新的微博数量（提醒）
-        [self showNewStatusCount:statusFrameArray.count];
+//        [self showNewStatusCount:statusFrameArray.count];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
