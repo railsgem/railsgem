@@ -24,6 +24,7 @@
 #define RWTitleButtonUpTag -1
 
 @interface RWHomeViewController ()
+@property (nonatomic, weak) RWTitleButton *titleButton;
 @property (nonatomic,strong) NSMutableArray *statusFrames;
 @end
 
@@ -47,8 +48,39 @@
     // 1.设置导航栏内容
     [self setupNavBar];
     
+    // 2.获得用户信息
+    [self setupUserData];
+    
     // 2.加载微博数据
 //    [self setupStatusData];
+}
+
+- (void)setupUserData
+{
+    // 创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    params[@"uid"] = @([RWAccountTool account].uid);
+    
+    // 发送请求
+    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 字典转模型
+        RWUser *user = [RWUser objectWithKeyValues:responseObject];
+        // 设置标题文字
+        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+        // 保存昵称
+        RWAccount *account = [RWAccountTool account];
+        account.name = user.name;
+        [RWAccountTool saveAccount:account];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+
 }
 
 /**
@@ -77,7 +109,7 @@
     // 封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
-    params[@"count"] = @5;
+    params[@"count"] = @20;
     
     if (self.statusFrames.count) {
         RWStatusFrame *statusFrame = self.statusFrames[0];
@@ -229,7 +261,8 @@
  *  设置导航栏内容
  */
 - (void)setupNavBar
-{// 左边按钮
+{
+    // 左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
     
     // 右边按钮
@@ -239,12 +272,18 @@
     RWTitleButton *titleButton = [RWTitleButton titleButton];
     // 图标
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    // 文字
-    [titleButton setTitle:@"哈哈哈哈" forState:UIControlStateNormal];
-    // 位置和尺寸
     titleButton.frame = CGRectMake(0, 0, 100, 40);
+    // 文字
+    if ([RWAccountTool account].name) {
+        [titleButton setTitle:[RWAccountTool account].name forState:UIControlStateNormal];
+    } else {
+        [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    }
+    
+    // 位置和尺寸
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    self.titleButton = titleButton;
     
     self.tableView.backgroundColor = RWColor(226, 226, 226);
 //    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, RWStatusTableBorder, 0);

@@ -46,6 +46,11 @@
 		690A839619E7FEBA0042F74D /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A838C19E7FEBA0042F74D /* MJPhotoToolbar.m */; };
 		690A839719E7FEBA0042F74D /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A838E19E7FEBA0042F74D /* MJPhotoView.m */; };
 		690A839819E7FEBA0042F74D /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A839019E7FEBA0042F74D /* SDWebImageManager+MJ.m */; };
+		690A83A419EBB0F00042F74D /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 690A839A19EBB0F00042F74D /* MJRefresh.bundle */; };
+		690A83A519EBB0F00042F74D /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A839D19EBB0F00042F74D /* MJRefreshBaseView.m */; };
+		690A83A619EBB0F00042F74D /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A839F19EBB0F00042F74D /* MJRefreshConst.m */; };
+		690A83A719EBB0F00042F74D /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A83A119EBB0F00042F74D /* MJRefreshFooterView.m */; };
+		690A83A819EBB0F00042F74D /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690A83A319EBB0F00042F74D /* MJRefreshHeaderView.m */; };
 		6943905D19DE36FD00BE32BF /* RWNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */; };
 		6943906019DE468100BE32BF /* RWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943905F19DE468100BE32BF /* RWPageControl.m */; };
 		6943906519DEA68800BE32BF /* RWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943906419DEA68800BE32BF /* RWOAuthViewController.m */; };
@@ -174,6 +179,16 @@
 		690A838E19E7FEBA0042F74D /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
 		690A838F19E7FEBA0042F74D /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
 		690A839019E7FEBA0042F74D /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
+		690A839A19EBB0F00042F74D /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		690A839B19EBB0F00042F74D /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		690A839C19EBB0F00042F74D /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		690A839D19EBB0F00042F74D /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		690A839E19EBB0F00042F74D /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		690A839F19EBB0F00042F74D /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		690A83A019EBB0F00042F74D /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		690A83A119EBB0F00042F74D /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		690A83A219EBB0F00042F74D /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		690A83A319EBB0F00042F74D /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
 		6943905B19DE36FD00BE32BF /* RWNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNewfeatureViewController.h; sourceTree = "<group>"; };
 		6943905C19DE36FD00BE32BF /* RWNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNewfeatureViewController.m; sourceTree = "<group>"; };
 		6943905E19DE468100BE32BF /* RWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPageControl.h; sourceTree = "<group>"; };
@@ -623,6 +638,23 @@
 			path = MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
+		690A839919EBB0F00042F74D /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				690A839A19EBB0F00042F74D /* MJRefresh.bundle */,
+				690A839B19EBB0F00042F74D /* MJRefresh.h */,
+				690A839C19EBB0F00042F74D /* MJRefreshBaseView.h */,
+				690A839D19EBB0F00042F74D /* MJRefreshBaseView.m */,
+				690A839E19EBB0F00042F74D /* MJRefreshConst.h */,
+				690A839F19EBB0F00042F74D /* MJRefreshConst.m */,
+				690A83A019EBB0F00042F74D /* MJRefreshFooterView.h */,
+				690A83A119EBB0F00042F74D /* MJRefreshFooterView.m */,
+				690A83A219EBB0F00042F74D /* MJRefreshHeaderView.h */,
+				690A83A319EBB0F00042F74D /* MJRefreshHeaderView.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		6943905719DE36B100BE32BF /* Newfeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,6 +712,7 @@
 		6943906619DEFE2600BE32BF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				690A839919EBB0F00042F74D /* MJRefresh */,
 				690A838119E7FEBA0042F74D /* MJPhotoBrowser */,
 				694390D319E1818800BE32BF /* MJExtension */,
 				694390A119E1244800BE32BF /* SDWebImage */,
@@ -886,6 +919,7 @@
 				6908739F19D41EB300F2568F /* InfoPlist.strings in Resources */,
 				690873A719D41EB300F2568F /* Images.xcassets in Resources */,
 				690A839219E7FEBA0042F74D /* MJPhotoBrowser.bundle in Resources */,
+				690A83A419EBB0F00042F74D /* MJRefresh.bundle in Resources */,
 				6943909A19E0F1C700BE32BF /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,8 +941,10 @@
 			files = (
 				69006D5019DDA12500B0CB4D /* RWTitleButton.m in Sources */,
 				6943906519DEA68800BE32BF /* RWOAuthViewController.m in Sources */,
+				690A83A819EBB0F00042F74D /* MJRefreshHeaderView.m in Sources */,
 				6943907F19DEFE2600BE32BF /* AFSecurityPolicy.m in Sources */,
 				6943907C19DEFE2600BE32BF /* AFHTTPRequestOperationManager.m in Sources */,
+				690A83A719EBB0F00042F74D /* MJRefreshFooterView.m in Sources */,
 				694390E719E1818800BE32BF /* MJArgument.m in Sources */,
 				6943907B19DEFE2600BE32BF /* AFHTTPRequestOperation.m in Sources */,
 				690A837D19E7FC730042F74D /* RWPhotoView.m in Sources */,
@@ -965,6 +1001,7 @@
 				694390CB19E1244800BE32BF /* UIImage+WebP.m in Sources */,
 				6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */,
 				69006D4D19DD85A500B0CB4D /* RWSearchBar.m in Sources */,
+				690A83A519EBB0F00042F74D /* MJRefreshBaseView.m in Sources */,
 				6908740C19D596EF00F2568F /* RWTabBar.m in Sources */,
 				690A834C19E565840042F74D /* RWStatusCell.m in Sources */,
 				6908740519D56C3F00F2568F /* main.m in Sources */,
@@ -978,6 +1015,7 @@
 				690A839619E7FEBA0042F74D /* MJPhotoToolbar.m in Sources */,
 				694390C119E1244800BE32BF /* SDImageCache.m in Sources */,
 				690A837419E77C060042F74D /* RWReweetStatusView.m in Sources */,
+				690A83A619EBB0F00042F74D /* MJRefreshConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
