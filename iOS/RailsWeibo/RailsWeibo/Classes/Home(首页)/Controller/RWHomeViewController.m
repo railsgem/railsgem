@@ -90,16 +90,14 @@
 -(void)setupRefreshView
 {
     // 1.下拉刷新
-    
     MJRefreshHeaderView *header = [MJRefreshHeaderView header];
     header.scrollView = self.tableView;
     header.delegate = self;
-    // 自动进入刷新状态（不会触发监听方法）
+    // 自动进入刷新状态
     [header beginRefreshing];
     self.header = header;
     
-    
-    // 2.上拉刷新（上拉加载更多数据）
+    // 2.上拉刷新(上拉加载更多数据)
     MJRefreshFooterView *footer = [MJRefreshFooterView footer];
     footer.scrollView = self.tableView;
     footer.delegate = self;
@@ -118,9 +116,9 @@
  */
 -(void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView
 {
-    if ([refreshView isKindOfClass:[MJRefreshFooterView class]]) {
+    if ([refreshView isKindOfClass:[MJRefreshFooterView class]]) { // 上拉刷新
         [self loadMoreData];
-    } else {
+    } else { // 下拉刷新
         [self loadNewData];
     }
 }
@@ -140,7 +138,7 @@
     params[@"count"] = @10;
     
     if (self.statusFrames.count) {
-        RWStatusFrame *statusFrame = self.statusFrames[0];
+        RWStatusFrame *statusFrame = [self.statusFrames lastObject];
         // 加载ID比since_id大的微博
         long long maxId = [statusFrame.status.idstr longLongValue] -1 ;
         params[@"max_id"] = @(maxId);
@@ -222,7 +220,7 @@
         [self.header endRefreshing];
         
         // 显示最新的微博数量（提醒）
-//        [self showNewStatusCount:statusFrameArray.count];
+        [self showNewStatusCount:statusFrameArray.count];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
