@@ -103,6 +103,7 @@
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
 		69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F345C819ECF76000783FC8 /* RWComposeToolbar.m */; };
+		69FC69D119ED12AD00E902D8 /* RWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +300,8 @@
 		6970958F19DA954000D3A2F9 /* RWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNavigationController.m; sourceTree = "<group>"; };
 		69F345C719ECF76000783FC8 /* RWComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposeToolbar.h; sourceTree = "<group>"; };
 		69F345C819ECF76000783FC8 /* RWComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposeToolbar.m; sourceTree = "<group>"; };
+		69FC69CF19ED12AD00E902D8 /* RWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposePhotosView.h; sourceTree = "<group>"; };
+		69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposePhotosView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +353,8 @@
 				6905140019EC032B00D9D23F /* RWTextView.m */,
 				69F345C719ECF76000783FC8 /* RWComposeToolbar.h */,
 				69F345C819ECF76000783FC8 /* RWComposeToolbar.m */,
+				69FC69CF19ED12AD00E902D8 /* RWComposePhotosView.h */,
+				69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1028,6 +1033,7 @@
 				694390EE19E1818800BE32BF /* NSObject+MJKeyValue.m in Sources */,
 				694390C319E1244800BE32BF /* SDWebImageDecoder.m in Sources */,
 				694390C619E1244800BE32BF /* SDWebImageManager.m in Sources */,
+				69FC69D119ED12AD00E902D8 /* RWComposePhotosView.m in Sources */,
 				6908740219D56C3F00F2568F /* RWTabBarViewController.m in Sources */,
 				690A839119E7FEBA0042F74D /* MJPhoto.m in Sources */,
 				690A837119E779700042F74D /* NSDate+CY.m in Sources */,

@@ -13,11 +13,12 @@
 #import "RWAccountTool.h"
 #import "MBProgressHUD+MJ.h"
 #import "RWComposeToolbar.h"
+#import "RWComposePhotosView.h"
 
 @interface RWComposeViewController () <UITextViewDelegate, RWComposeToolbarDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic,weak) RWTextView *textView;
 @property (nonatomic, weak) RWComposeToolbar *toolbar;
-@property (nonatomic, weak) UIImageView *imageView;
+@property (nonatomic, weak) RWComposePhotosView *photosView;
 
 @end
 
@@ -36,19 +37,22 @@
     // 添加toolbar
     [self setupToolbar];
     
-    // 添加imageView
-    [self setupImageView];
+    // 添加photosView
+    [self setupPhotosView];
 }
 
 /**
- *  添加imageView
+ *  添加photosView
  */
-- (void)setupImageView
+- (void)setupPhotosView
 {
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.frame = CGRectMake(5, 80, 60, 60);
-    [self.textView addSubview:imageView];
-    self.imageView = imageView;
+    RWComposePhotosView *photosView = [[RWComposePhotosView alloc] init];
+    CGFloat photosW = self.textView.frame.size.width;
+    CGFloat photosH = self.textView.frame.size.height;
+    CGFloat photosY = 80;
+    photosView.frame = CGRectMake(0, photosY, photosW, photosH);
+    [self.textView addSubview:photosView];
+    self.photosView = photosView;
 }
 
 
@@ -114,9 +118,7 @@
     
     // 2.去的图片
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    self.imageView.image = image;
-    
-    NSLog(@"%@", info);
+    [self.photosView addImage:image];
 }
 
 
@@ -219,10 +221,60 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 /**
- *  发送微博
+ *  发微博
  */
--(void)send
+- (void)send
+{
+    if (self.photosView.totalImages.count) { // 有图片
+        [self sendWithImage];
+    } else { // 没有图片
+        [self sendWithoutImage];
+    }
+    
+    // 关闭控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/**
+ *  发有图片的微博
+ */
+-(void)sendWithImage
+{
+    // 1.创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"status"] = self.textView.text;
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    
+    // 3.发送请求
+    [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) { // 在发送请求之前调用这个block
+        // 必须在这里说明要上传哪些文件
+        NSArray *images = [self.photosView totalImages];
+        //        int count = 0;
+        for (UIImage *image in images) {
+            //            count++;
+            NSData *data = UIImageJPEGRepresentation(image, 0.000001);
+            //            NSString *filename = [NSString stringWithFormat:@"%d.jpg", count];
+            
+            // 发送多张图片用同一个name即可（同一个请求参数名字，服务器利用数组接收即可）
+            [formData appendPartWithFileData:data name:@"pic" fileName:@"" mimeType:@"image/jpeg"];
+        }
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [MBProgressHUD showSuccess:@"发送成功"];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD showError:@"发送失败"];
+    }];
+    
+}
+
+/**
+ *  发没有图片的微博
+ */
+-(void)sendWithoutImage
 {
     
     // 创建请求管理对象
