@@ -39,12 +39,21 @@
         [plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
         [plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateSelected];
         plusButton.bounds = CGRectMake(0, 0, plusButton.currentBackgroundImage.size.width, plusButton.currentBackgroundImage.size.height);
+        // 添加监听
+        [plusButton addTarget:self action:@selector(plusButtonClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:plusButton];
         self.plusButton = plusButton;
         
     }
     //
     return self;
+}
+
+- (void)plusButtonClick
+{
+    if ([self.delegate respondsToSelector:@selector(tabBarDidClickedPlusButton:)]) {
+        [self.delegate tabBarDidClickedPlusButton:self];
+    }
 }
 
 -(void)addTabBarButtonWithItem:(UITabBarItem *)item

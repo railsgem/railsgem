@@ -46,9 +46,15 @@
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[UITextAttributeTextColor] = iOS7 ? [UIColor orangeColor] : [UIColor blackColor];
     textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:iOS7 ? 14 : 12];
+    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:iOS7 ? 15 : 12];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateSelected];
+    
+    
+    NSMutableDictionary *disableTextAttrs = [NSMutableDictionary dictionary];
+    disableTextAttrs[UITextAttributeTextColor] = [UIColor lightGrayColor];
+    [item setTitleTextAttributes:disableTextAttrs forState:UIControlStateDisabled];
+
 }
 
 /**

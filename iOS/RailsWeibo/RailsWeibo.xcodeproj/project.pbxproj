@@ -10,6 +10,8 @@
 		69006D4A19DD623C00B0CB4D /* UIBarButtonItem+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 69006D4919DD623C00B0CB4D /* UIBarButtonItem+CY.m */; };
 		69006D4D19DD85A500B0CB4D /* RWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69006D4C19DD85A500B0CB4D /* RWSearchBar.m */; };
 		69006D5019DDA12500B0CB4D /* RWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 69006D4F19DDA12500B0CB4D /* RWTitleButton.m */; };
+		690513FE19EBFB5200D9D23F /* RWComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690513FD19EBFB5200D9D23F /* RWComposeViewController.m */; };
+		6905140119EC032B00D9D23F /* RWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6905140019EC032B00D9D23F /* RWTextView.m */; };
 		6908739519D41EB300F2568F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739419D41EB300F2568F /* Foundation.framework */; };
 		6908739719D41EB300F2568F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739619D41EB300F2568F /* CoreGraphics.framework */; };
 		6908739919D41EB300F2568F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908739819D41EB300F2568F /* UIKit.framework */; };
@@ -119,6 +121,10 @@
 		69006D4C19DD85A500B0CB4D /* RWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSearchBar.m; sourceTree = "<group>"; };
 		69006D4E19DDA12500B0CB4D /* RWTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTitleButton.h; sourceTree = "<group>"; };
 		69006D4F19DDA12500B0CB4D /* RWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTitleButton.m; sourceTree = "<group>"; };
+		690513FC19EBFB5200D9D23F /* RWComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposeViewController.h; sourceTree = "<group>"; };
+		690513FD19EBFB5200D9D23F /* RWComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposeViewController.m; sourceTree = "<group>"; };
+		690513FF19EC032B00D9D23F /* RWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTextView.h; sourceTree = "<group>"; };
+		6905140019EC032B00D9D23F /* RWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTextView.m; sourceTree = "<group>"; };
 		6908739119D41EB300F2568F /* RailsWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailsWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6908739419D41EB300F2568F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6908739619D41EB300F2568F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -316,6 +322,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690513F919EBFB0B00D9D23F /* Compose(发微博) */ = {
+			isa = PBXGroup;
+			children = (
+				690513FA19EBFB0B00D9D23F /* Controller */,
+				690513FB19EBFB0B00D9D23F /* View */,
+			);
+			path = "Compose(发微博)";
+			sourceTree = "<group>";
+		};
+		690513FA19EBFB0B00D9D23F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690513FC19EBFB5200D9D23F /* RWComposeViewController.h */,
+				690513FD19EBFB5200D9D23F /* RWComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690513FB19EBFB0B00D9D23F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				690513FF19EC032B00D9D23F /* RWTextView.h */,
+				6905140019EC032B00D9D23F /* RWTextView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6908738819D41EB200F2568F = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +422,7 @@
 		690873D819D56C3F00F2568F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				690513F919EBFB0B00D9D23F /* Compose(发微博) */,
 				6943906119DEA65F00BE32BF /* OAuth(授权) */,
 				6943905719DE36B100BE32BF /* Newfeature(新特性) */,
 				690873D919D56C3F00F2568F /* Discover(广场) */,
@@ -991,6 +1025,7 @@
 				6908740219D56C3F00F2568F /* RWTabBarViewController.m in Sources */,
 				690A839119E7FEBA0042F74D /* MJPhoto.m in Sources */,
 				690A837119E779700042F74D /* NSDate+CY.m in Sources */,
+				690513FE19EBFB5200D9D23F /* RWComposeViewController.m in Sources */,
 				6943907D19DEFE2600BE32BF /* AFHTTPSessionManager.m in Sources */,
 				6908740319D56C3F00F2568F /* RWMeViewController.m in Sources */,
 				69006D4A19DD623C00B0CB4D /* UIBarButtonItem+CY.m in Sources */,
@@ -1019,6 +1054,7 @@
 				6908740C19D596EF00F2568F /* RWTabBar.m in Sources */,
 				690A834C19E565840042F74D /* RWStatusCell.m in Sources */,
 				6908740519D56C3F00F2568F /* main.m in Sources */,
+				6905140119EC032B00D9D23F /* RWTextView.m in Sources */,
 				694390D219E165F500BE32BF /* RWUser.m in Sources */,
 				6943907E19DEFE2600BE32BF /* AFNetworkReachabilityManager.m in Sources */,
 				6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */,

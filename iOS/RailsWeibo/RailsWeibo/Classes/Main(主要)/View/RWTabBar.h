@@ -14,6 +14,7 @@
 
 @optional
 - (void)tabBar:(RWTabBar *)tabBar didSelectedButtonForm:(int)from to:(int)to;
+- (void)tabBarDidClickedPlusButton:(RWTabBar *)tabBar;
 
 @end
 

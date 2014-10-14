@@ -14,6 +14,7 @@
 #import "RWNavigationController.h"
 #import "UIImage+CY.h"
 #import "RWTabBar.h"
+#import "RWComposeViewController.h"
 
 
 @interface RWTabBarViewController ()<RWTabBarDelegate>
@@ -70,6 +71,8 @@
     self.customTabBar = customTabBar;
 }
 
+#pragma mark - tabbar的代理方法
+
 /**
  *  监听Tabbar按钮的改变
  *  @param from   原来选中的位置
@@ -78,6 +81,17 @@
 -(void)tabBar:(RWTabBar *)tabBar didSelectedButtonForm:(int)from to:(int)to
 {
     self.selectedIndex = to;
+}
+
+/**
+ *  监听加号按钮点击
+ */
+-(void)tabBarDidClickedPlusButton:(RWTabBar *)tabBar
+{
+    RWComposeViewController *compose = [[RWComposeViewController alloc] init];
+    RWNavigationController *nav = [[RWNavigationController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
+    
 }
 
 /**
