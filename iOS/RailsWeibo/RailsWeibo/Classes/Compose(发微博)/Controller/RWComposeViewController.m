@@ -40,6 +40,7 @@
     // 1.添加
     RWTextView *textView = [[RWTextView alloc] init];
     textView.frame = self.view.bounds;
+    textView.placeholder = @"分享新鲜事...";
     textView.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:textView];
     self.textView = textView;
