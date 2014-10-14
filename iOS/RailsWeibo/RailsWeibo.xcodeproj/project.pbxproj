@@ -102,6 +102,7 @@
 		6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958919D798C000D3A2F9 /* RWTabBarButton.m */; };
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
+		69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F345C819ECF76000783FC8 /* RWComposeToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +297,8 @@
 		6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBadgeButton.m; sourceTree = "<group>"; };
 		6970958E19DA954000D3A2F9 /* RWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNavigationController.h; sourceTree = "<group>"; };
 		6970958F19DA954000D3A2F9 /* RWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNavigationController.m; sourceTree = "<group>"; };
+		69F345C719ECF76000783FC8 /* RWComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposeToolbar.h; sourceTree = "<group>"; };
+		69F345C819ECF76000783FC8 /* RWComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposeToolbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +348,8 @@
 			children = (
 				690513FF19EC032B00D9D23F /* RWTextView.h */,
 				6905140019EC032B00D9D23F /* RWTextView.m */,
+				69F345C719ECF76000783FC8 /* RWComposeToolbar.h */,
+				69F345C819ECF76000783FC8 /* RWComposeToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1002,6 +1007,7 @@
 				690A838019E7FD4A0042F74D /* RWPhotosView.m in Sources */,
 				694390C819E1244800BE32BF /* UIButton+WebCache.m in Sources */,
 				6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */,
+				69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */,
 				694390E819E1818800BE32BF /* MJIvar.m in Sources */,
 				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
 				694390CF19E15EB800BE32BF /* RWStatus.m in Sources */,
