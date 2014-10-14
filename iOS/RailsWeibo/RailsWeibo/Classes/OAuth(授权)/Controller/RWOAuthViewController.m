@@ -7,7 +7,6 @@
 //
 
 #import "RWOAuthViewController.h"
-#import "AFNetworking.h"
 #import "RWAccount.h"
 #import "RWWeiboTool.h"
 #import "RWAccountTool.h"
@@ -102,23 +101,18 @@
 - (void)accessTokenWithCode:(NSString *)code
 {
     
-    // AFNetworking/AFN
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 封装请求参数
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"client_id"] = IWAppKey;
     params[@"client_secret"] = IWAppSecret;
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
     params[@"redirect_uri"] = IWRedirectURI;
-
     
-    // 发送请求
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    // 2.发送请求
+    [RWHttpTool postWithURL:@"https://api.weibo.com/oauth2/access_token" params:params success:^(id json) {
         // 先将字典转为模型
-        RWAccount *account = [RWAccount accountWithDict:responseObject];
+        RWAccount *account = [RWAccount accountWithDict:json];
         
         // 存储模型数据
         [RWAccountTool saveAccount:account];
@@ -128,13 +122,12 @@
         
         // 隐藏提醒框
         [MBProgressHUD hideHUD];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
+    } failure:^(NSError *error) {
+        
         // 隐藏提醒框
         [MBProgressHUD hideHUD];
     }];
-    
 }
 
 @end

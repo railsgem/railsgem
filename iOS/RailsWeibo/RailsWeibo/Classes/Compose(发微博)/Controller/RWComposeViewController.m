@@ -7,7 +7,6 @@
 //
 
 #import "RWComposeViewController.h"
-#import "AFNetworking.h"
 #import "RWTextView.h"
 #import "RWAccount.h"
 #import "RWAccountTool.h"
@@ -242,30 +241,28 @@
  */
 -(void)sendWithImage
 {
-    // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
     // 2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"status"] = self.textView.text;
     params[@"access_token"] = [RWAccountTool account].access_token;
     
+    // 2.封装文件参数
+    NSMutableArray *formDataArray = [NSMutableArray array];
+    NSArray *images = [self.photosView totalImages];
+    for (UIImage *image in images) {
+        RWFormData *formData = [[RWFormData alloc] init];
+        formData.data = UIImageJPEGRepresentation(image, 0.000001);
+        formData.name = @"pic";
+        formData.mimeType = @"image/jpeg";
+        formData.filename = @"";
+        [formDataArray addObject:formData];
+    }
+    
+    
     // 3.发送请求
-    [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) { // 在发送请求之前调用这个block
-        // 必须在这里说明要上传哪些文件
-        NSArray *images = [self.photosView totalImages];
-        //        int count = 0;
-        for (UIImage *image in images) {
-            //            count++;
-            NSData *data = UIImageJPEGRepresentation(image, 0.000001);
-            //            NSString *filename = [NSString stringWithFormat:@"%d.jpg", count];
-            
-            // 发送多张图片用同一个name即可（同一个请求参数名字，服务器利用数组接收即可）
-            [formData appendPartWithFileData:data name:@"pic" fileName:@"" mimeType:@"image/jpeg"];
-        }
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [RWHttpTool postWithURL:@"https://upload.api.weibo.com/2/statuses/upload.json" params:params formDataArray:formDataArray success:^(id json) {
         [MBProgressHUD showSuccess:@"发送成功"];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
     }];
     
@@ -277,27 +274,17 @@
 -(void)sendWithoutImage
 {
     
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
     // 封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"status"] = self.textView.text;
     params[@"access_token"] = [RWAccountTool account].access_token;
     
     // 发送请求
-    [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [RWHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id json) {
         [MBProgressHUD showSuccess:@"发送成功"];
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
-
-        
     }];
-
-    // 4.关闭控制器
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 @end

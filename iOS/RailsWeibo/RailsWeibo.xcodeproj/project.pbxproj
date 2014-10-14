@@ -104,6 +104,7 @@
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
 		69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F345C819ECF76000783FC8 /* RWComposeToolbar.m */; };
 		69FC69D119ED12AD00E902D8 /* RWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */; };
+		69FC69D519ED1E4D00E902D8 /* RWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D419ED1E4D00E902D8 /* RWHttpTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +303,8 @@
 		69F345C819ECF76000783FC8 /* RWComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposeToolbar.m; sourceTree = "<group>"; };
 		69FC69CF19ED12AD00E902D8 /* RWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposePhotosView.h; sourceTree = "<group>"; };
 		69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposePhotosView.m; sourceTree = "<group>"; };
+		69FC69D319ED1E4D00E902D8 /* RWHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHttpTool.h; sourceTree = "<group>"; };
+		69FC69D419ED1E4D00E902D8 /* RWHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHttpTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +648,7 @@
 		690873F919D56C3F00F2568F /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
+				69FC69D219ED1E3000E902D8 /* Tool */,
 				6943906619DEFE2600BE32BF /* Lib */,
 				690873FA19D56C3F00F2568F /* Category */,
 				690873FB19D56C3F00F2568F /* main.m */,
@@ -895,6 +899,15 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		69FC69D219ED1E3000E902D8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				69FC69D319ED1E4D00E902D8 /* RWHttpTool.h */,
+				69FC69D419ED1E4D00E902D8 /* RWHttpTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1069,6 +1082,7 @@
 				6905140119EC032B00D9D23F /* RWTextView.m in Sources */,
 				694390D219E165F500BE32BF /* RWUser.m in Sources */,
 				6943907E19DEFE2600BE32BF /* AFNetworkReachabilityManager.m in Sources */,
+				69FC69D519ED1E4D00E902D8 /* RWHttpTool.m in Sources */,
 				6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */,
 				690A839819E7FEBA0042F74D /* SDWebImageManager+MJ.m in Sources */,
 				694390CC19E1244800BE32BF /* UIImageView+WebCache.m in Sources */,

@@ -14,7 +14,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "UIImage+CY.h"
-    #import "RWCommon.h"
+#import "RWCommon.h"
+#import "RWHttpTool.h"
+
 
 
 

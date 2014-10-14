@@ -10,7 +10,6 @@
 #import "RWBadgeButton.h"
 #import "UIBarButtonItem+CY.h"
 #import "RWTitleButton.h"
-#import "AFNetworking.h"
 #import "RWAccountTool.h"
 #import "RWAccount.h"
 #import "UIImageView+WebCache.h"
@@ -58,19 +57,15 @@
 
 - (void)setupUserData
 {
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 封装请求参数
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
     params[@"uid"] = @([RWAccountTool account].uid);
     
-    // 发送请求
-    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    // 2.发送请求
+    [RWHttpTool getWithURL:@"https://api.weibo.com/2/users/show.json" params:params success:^(id json) {
         // 字典转模型
-        RWUser *user = [RWUser objectWithKeyValues:responseObject];
+        RWUser *user = [RWUser objectWithKeyValues:json];
         // 设置标题文字
         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
         // 保存昵称
@@ -78,10 +73,9 @@
         account.name = user.name;
         [RWAccountTool saveAccount:account];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         
     }];
-
 }
 
 /**
@@ -129,10 +123,7 @@
 -(void)loadMoreData
 {
     
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 封装请求参数
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
     params[@"count"] = @10;
@@ -144,10 +135,10 @@
         params[@"max_id"] = @(maxId);
     }
     
-    // 发送请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    // 2.发送请求
+    [RWHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
         // 将字典数组转为模型数组(里面放的就是RWStatus模型)
-        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
         // 创建frame模型对象
         NSMutableArray *statusFrameArray = [NSMutableArray array];
@@ -166,22 +157,16 @@
         
         // 让刷新控件停止显示刷新状态
         [self.footer endRefreshing];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         // 让刷新控件停止显示刷新状态
         [self.footer endRefreshing];
-        
     }];
-
 }
 
 -(void)loadNewData
 {
     // 刷新数据（向新浪获取更新的数据）
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 封装请求参数
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
     params[@"count"] = @10;
@@ -193,9 +178,9 @@
     }
     
     // 发送请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [RWHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
         // 将字典数组转为模型数组(里面放的就是RWStatus模型)
-        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
         // 创建frame模型对象
         NSMutableArray *statusFrameArray = [NSMutableArray array];
@@ -221,24 +206,16 @@
         
         // 显示最新的微博数量（提醒）
         [self showNewStatusCount:statusFrameArray.count];
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+    } failure:^(NSError *error) {
         // 让刷新控件停止显示刷新状态
         [self.header endRefreshing];
-        
     }];
-
 }
 
 - (void)refreshControlStateChange:(UIRefreshControl *)refreshControl
 {
     // 刷新数据（向新浪获取更新的数据）
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 封装请求参数
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
     params[@"count"] = @10;
@@ -249,10 +226,10 @@
         params[@"since_id"] = statusFrame.status.idstr;
     }
     
-    // 发送请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    // 2.发送请求
+    [RWHttpTool postWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
         // 将字典数组转为模型数组(里面放的就是RWStatus模型)
-        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
         // 创建frame模型对象
         NSMutableArray *statusFrameArray = [NSMutableArray array];
@@ -277,15 +254,11 @@
         
         // 显示最新的微博数量（提醒）
         [self showNewStatusCount:statusFrameArray.count];
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+
+    } failure:^(NSError *error) {
         // 让刷新控件停止显示刷新状态
         [refreshControl endRefreshing];
-        
     }];
-    
 }
 
 /**
@@ -341,33 +314,14 @@
 -(void)setupStatusData
 {
     
-    // AFNetworking/AFN
-    // 创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
     // 封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [RWAccountTool account].access_token;
     
     // 发送请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        // 取出所有微博数据(每一条微博都是一个字典)
-//        NSArray *dictArray = responseObject[@"statuses"];
-//        
-////        // 将字典数据转为模型数据
-////        NSMutableArray *statusArray = [NSMutableArray array];
-////        for (NSDictionary *dict in dictArray) {
-////            // 创建模型
-////            RWStatus *status = [RWStatus objectWithKeyValues:dict];
-////            
-////            // 添加模型
-////            [statusArray addObject:status];
-////        }
-//        
-//        self.statuses = [RWStatus objectArrayWithKeyValuesArray:dictArray];
-//
+    [RWHttpTool postWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
         // 将字典数组转为模型数组(里面放的就是RWStatus模型)
-        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
         // 创建frame模型对象
         NSMutableArray *statusFrameArray = [NSMutableArray array];
@@ -383,10 +337,11 @@
         
         // 刷新表格
         [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+    } failure:^(NSError *error) {
         
     }];
+    
 }
 
 /**
