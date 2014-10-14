@@ -57,3 +57,6 @@
 #define RWPhotoH 70
 #define RWPhotoMargin 10
 
+
+// 7.常用的对象
+#define RWNotificationCenter [NSNotificationCenter defaultCenter]

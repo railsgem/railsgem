@@ -7,7 +7,11 @@
 //
 
 #import "RWComposeViewController.h"
+#import "AFNetworking.h"
 #import "RWTextView.h"
+#import "RWAccount.h"
+#import "RWAccountTool.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface RWComposeViewController ()
 @property (nonatomic,weak) RWTextView *textView;
@@ -41,8 +45,14 @@
     self.textView = textView;
     
     // 2.监听
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:textView];
+    [RWNotificationCenter addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:textView];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.textView becomeFirstResponder];
 }
 
 /**
@@ -51,6 +61,11 @@
 -(void)textDidChange
 {
     self.navigationItem.rightBarButtonItem.enabled = (self.textView.text.length != 0);
+}
+
+-(void) dealloc
+{
+    [RWNotificationCenter removeObserver:self];
 }
 
 /**
@@ -78,5 +93,27 @@
 -(void)send
 {
     
+    // 创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"status"] = self.textView.text;
+    params[@"access_token"] = [RWAccountTool account].access_token;
+    
+    // 发送请求
+    [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [MBProgressHUD showSuccess:@"发送成功"];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD showError:@"发送失败"];
+
+        
+    }];
+
+    // 4.关闭控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
