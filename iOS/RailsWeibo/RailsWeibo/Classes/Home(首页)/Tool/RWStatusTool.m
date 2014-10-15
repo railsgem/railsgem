@@ -9,15 +9,29 @@
 #import "RWStatusTool.h"
 #import "RWHttpTool.h"
 #import "MJExtension.h"
-#import "RWHomeStatusesParam.h"
 
 @implementation RWStatusTool
 
-+(void)homeStatusesWithParam:(RWHomeStatusesParam *)param success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
-{    
++(void)homeStatusesWithParam:(RWHomeStatusesParam *)param success:(void (^)(RWHomeStatusesResult *))success failure:(void (^)(NSError *))failure
+{
     [RWHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:param.keyValues success:^(id json) {
         if (success) {
-            success(json);
+            RWHomeStatusesResult *result = [RWHomeStatusesResult objectWithKeyValues:json];
+            success(result);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)sendStatusWithParam:(RWSendStatusParam *)param success:(void (^)(RWSendStatusResult *))success failure:(void (^)(NSError *))failure
+{
+    [RWHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:param.keyValues success:^(id json) {
+        if (success) {
+            RWSendStatusResult *result = [RWSendStatusResult objectWithKeyValues:json];
+            success(result);
         }
     } failure:^(NSError *error) {
         if (failure) {

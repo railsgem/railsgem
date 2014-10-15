@@ -20,7 +20,7 @@
 #import "RWStatusCell.h"
 #import "MJRefresh.h"
 #import "RWStatusTool.h"
-#import "RWHomeStatusesParam.h"
+#import "RWUserTool.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
@@ -60,24 +60,22 @@
 - (void)setupUserData
 {
     // 1.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [RWAccountTool account].access_token;
-    params[@"uid"] = @([RWAccountTool account].uid);
+    RWUserInfoParam *param = [[RWUserInfoParam alloc] init];
+    param.uid = @([RWAccountTool account].uid);
     
     // 2.发送请求
-    [RWHttpTool getWithURL:@"https://api.weibo.com/2/users/show.json" params:params success:^(id json) {
-        // 字典转模型
-        RWUser *user = [RWUser objectWithKeyValues:json];
+    [RWUserTool userInfoWithParam:param success:^(RWUserInfoResult *result) {
         // 设置标题文字
-        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+        [self.titleButton setTitle:result.name forState:UIControlStateNormal];
         // 保存昵称
         RWAccount *account = [RWAccountTool account];
-        account.name = user.name;
+        account.name = result.name;
         [RWAccountTool saveAccount:account];
-        
+
     } failure:^(NSError *error) {
         
-    }];
+    } ];
+    
 }
 
 /**
@@ -127,23 +125,19 @@
     
     // 1.封装请求参数
     RWHomeStatusesParam *param = [[RWHomeStatusesParam alloc] init];
-    param.access_token = [RWAccountTool account].access_token;
-    param.count = 10;
+    param.count = @(10);
     
     if (self.statusFrames.count) {
         RWStatusFrame *statusFrame = [self.statusFrames lastObject];
         // 加载ID比since_id大的微博
-        param.max_id = [statusFrame.status.idstr longLongValue] -1 ;
+        param.max_id = @([statusFrame.status.idstr longLongValue] -1 );
     }
     
     // 2.发送请求
-    [RWStatusTool homeStatusesWithParam:param success:^(id json) {
-        // 将字典数组转为模型数组(里面放的就是RWStatus模型)
-        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
-        
+    [RWStatusTool homeStatusesWithParam:param success:^(RWHomeStatusesResult *result) {
         // 创建frame模型对象
         NSMutableArray *statusFrameArray = [NSMutableArray array];
-        for (RWStatus *status in statusArray) {
+        for (RWStatus *status in result.statuses) {
             RWStatusFrame *statusFrame = [[RWStatusFrame alloc] init];
             // 传递微博模型数据
             statusFrame.status = status;
@@ -162,6 +156,7 @@
         // 让刷新控件停止显示刷新状态
         [self.footer endRefreshing];
     }];
+    
 }
 
 -(void)loadNewData
@@ -169,23 +164,20 @@
     // 刷新数据（向新浪获取更新的数据）
     // 1.封装请求参数
     RWHomeStatusesParam *param = [[RWHomeStatusesParam alloc] init];
-    param.access_token = [RWAccountTool account].access_token;
-    param.count = 10;
+    param.count = @(10);
     
     if (self.statusFrames.count) {
         RWStatusFrame *statusFrame = self.statusFrames[0];
         // 加载ID比since_id大的微博
-        param.since_id = [statusFrame.status.idstr longLongValue];
+        param.since_id = @([statusFrame.status.idstr longLongValue]);
     }
     
     // 发送请求
-    [RWStatusTool homeStatusesWithParam:param success:^(id json) {
-        // 将字典数组转为模型数组(里面放的就是RWStatus模型)
-        NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
+    [RWStatusTool homeStatusesWithParam:param success:^(RWHomeStatusesResult *result) {
         
         // 创建frame模型对象
         NSMutableArray *statusFrameArray = [NSMutableArray array];
-        for (RWStatus *status in statusArray) {
+        for (RWStatus *status in result.statuses) {
             RWStatusFrame *statusFrame = [[RWStatusFrame alloc] init];
             // 传递微博模型数据
             statusFrame.status = status;

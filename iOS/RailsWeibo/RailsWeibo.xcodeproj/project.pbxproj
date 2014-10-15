@@ -103,7 +103,14 @@
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
 		69F20BD719EE09F00010BAFC /* RWStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BD619EE09F00010BAFC /* RWStatusTool.m */; };
-		69F20BDA19EE0EF30010BAFC /* RWHomeStatusesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BD919EE0EF30010BAFC /* RWHomeStatusesParam.m */; };
+		69F20BE019EE5B690010BAFC /* RWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BDF19EE5B690010BAFC /* RWUserTool.m */; };
+		69F20BEC19EE5C280010BAFC /* RWHomeStatusesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BE919EE5C280010BAFC /* RWHomeStatusesParam.m */; };
+		69F20BED19EE5C280010BAFC /* RWHomeStatusesResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BEB19EE5C280010BAFC /* RWHomeStatusesResult.m */; };
+		69F20BF319EE5C320010BAFC /* RWUserInfoParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BF019EE5C320010BAFC /* RWUserInfoParam.m */; };
+		69F20BF419EE5C320010BAFC /* RWUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BF219EE5C320010BAFC /* RWUserInfoResult.m */; };
+		69F20BFC19EE67190010BAFC /* RWSendStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BFB19EE67190010BAFC /* RWSendStatusParam.m */; };
+		69F20BFF19EE6BB50010BAFC /* RWSendStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BFE19EE6BB50010BAFC /* RWSendStatusResult.m */; };
+		69F20C0319EE71820010BAFC /* RWBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20C0219EE71820010BAFC /* RWBaseParam.m */; };
 		69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F345C819ECF76000783FC8 /* RWComposeToolbar.m */; };
 		69FC69D119ED12AD00E902D8 /* RWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */; };
 		69FC69D519ED1E4D00E902D8 /* RWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D419ED1E4D00E902D8 /* RWHttpTool.m */; };
@@ -303,8 +310,22 @@
 		6970958F19DA954000D3A2F9 /* RWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNavigationController.m; sourceTree = "<group>"; };
 		69F20BD519EE09F00010BAFC /* RWStatusTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusTool.h; sourceTree = "<group>"; };
 		69F20BD619EE09F00010BAFC /* RWStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusTool.m; sourceTree = "<group>"; };
-		69F20BD819EE0EF30010BAFC /* RWHomeStatusesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHomeStatusesParam.h; sourceTree = "<group>"; };
-		69F20BD919EE0EF30010BAFC /* RWHomeStatusesParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHomeStatusesParam.m; sourceTree = "<group>"; };
+		69F20BDE19EE5B690010BAFC /* RWUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWUserTool.h; sourceTree = "<group>"; };
+		69F20BDF19EE5B690010BAFC /* RWUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWUserTool.m; sourceTree = "<group>"; };
+		69F20BE819EE5C280010BAFC /* RWHomeStatusesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHomeStatusesParam.h; sourceTree = "<group>"; };
+		69F20BE919EE5C280010BAFC /* RWHomeStatusesParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHomeStatusesParam.m; sourceTree = "<group>"; };
+		69F20BEA19EE5C280010BAFC /* RWHomeStatusesResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHomeStatusesResult.h; sourceTree = "<group>"; };
+		69F20BEB19EE5C280010BAFC /* RWHomeStatusesResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHomeStatusesResult.m; sourceTree = "<group>"; };
+		69F20BEF19EE5C320010BAFC /* RWUserInfoParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWUserInfoParam.h; sourceTree = "<group>"; };
+		69F20BF019EE5C320010BAFC /* RWUserInfoParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWUserInfoParam.m; sourceTree = "<group>"; };
+		69F20BF119EE5C320010BAFC /* RWUserInfoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWUserInfoResult.h; sourceTree = "<group>"; };
+		69F20BF219EE5C320010BAFC /* RWUserInfoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWUserInfoResult.m; sourceTree = "<group>"; };
+		69F20BFA19EE67190010BAFC /* RWSendStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSendStatusParam.h; sourceTree = "<group>"; };
+		69F20BFB19EE67190010BAFC /* RWSendStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSendStatusParam.m; sourceTree = "<group>"; };
+		69F20BFD19EE6BB50010BAFC /* RWSendStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSendStatusResult.h; sourceTree = "<group>"; };
+		69F20BFE19EE6BB50010BAFC /* RWSendStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSendStatusResult.m; sourceTree = "<group>"; };
+		69F20C0119EE71820010BAFC /* RWBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBaseParam.h; sourceTree = "<group>"; };
+		69F20C0219EE71820010BAFC /* RWBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBaseParam.m; sourceTree = "<group>"; };
 		69F345C719ECF76000783FC8 /* RWComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposeToolbar.h; sourceTree = "<group>"; };
 		69F345C819ECF76000783FC8 /* RWComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposeToolbar.m; sourceTree = "<group>"; };
 		69FC69CF19ED12AD00E902D8 /* RWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposePhotosView.h; sourceTree = "<group>"; };
@@ -340,6 +361,7 @@
 		690513F919EBFB0B00D9D23F /* Compose(发微博) */ = {
 			isa = PBXGroup;
 			children = (
+				69F20BF519EE66610010BAFC /* Model */,
 				690513FA19EBFB0B00D9D23F /* Controller */,
 				690513FB19EBFB0B00D9D23F /* View */,
 			);
@@ -512,6 +534,8 @@
 		690873E519D56C3F00F2568F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				69F20BEE19EE5C320010BAFC /* UserInfo */,
+				69F20BE719EE5C280010BAFC /* HomeStatuses */,
 				694390CD19E15EB800BE32BF /* RWStatus.h */,
 				694390CE19E15EB800BE32BF /* RWStatus.m */,
 				694390D019E165F500BE32BF /* RWUser.h */,
@@ -520,8 +544,6 @@
 				690A834E19E67A390042F74D /* RWStatusFrame.m */,
 				690A835019E777750042F74D /* RWPhoto.h */,
 				690A835119E777750042F74D /* RWPhoto.m */,
-				69F20BD819EE0EF30010BAFC /* RWHomeStatusesParam.h */,
-				69F20BD919EE0EF30010BAFC /* RWHomeStatusesParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -657,6 +679,7 @@
 		690873F919D56C3F00F2568F /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
+				69F20C0019EE715D0010BAFC /* Model */,
 				69FC69D219ED1E3000E902D8 /* Tool */,
 				6943906619DEFE2600BE32BF /* Lib */,
 				690873FA19D56C3F00F2568F /* Category */,
@@ -913,8 +936,52 @@
 			children = (
 				69F20BD519EE09F00010BAFC /* RWStatusTool.h */,
 				69F20BD619EE09F00010BAFC /* RWStatusTool.m */,
+				69F20BDE19EE5B690010BAFC /* RWUserTool.h */,
+				69F20BDF19EE5B690010BAFC /* RWUserTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		69F20BE719EE5C280010BAFC /* HomeStatuses */ = {
+			isa = PBXGroup;
+			children = (
+				69F20BE819EE5C280010BAFC /* RWHomeStatusesParam.h */,
+				69F20BE919EE5C280010BAFC /* RWHomeStatusesParam.m */,
+				69F20BEA19EE5C280010BAFC /* RWHomeStatusesResult.h */,
+				69F20BEB19EE5C280010BAFC /* RWHomeStatusesResult.m */,
+			);
+			path = HomeStatuses;
+			sourceTree = "<group>";
+		};
+		69F20BEE19EE5C320010BAFC /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				69F20BEF19EE5C320010BAFC /* RWUserInfoParam.h */,
+				69F20BF019EE5C320010BAFC /* RWUserInfoParam.m */,
+				69F20BF119EE5C320010BAFC /* RWUserInfoResult.h */,
+				69F20BF219EE5C320010BAFC /* RWUserInfoResult.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		69F20BF519EE66610010BAFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69F20BFA19EE67190010BAFC /* RWSendStatusParam.h */,
+				69F20BFB19EE67190010BAFC /* RWSendStatusParam.m */,
+				69F20BFD19EE6BB50010BAFC /* RWSendStatusResult.h */,
+				69F20BFE19EE6BB50010BAFC /* RWSendStatusResult.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		69F20C0019EE715D0010BAFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69F20C0119EE71820010BAFC /* RWBaseParam.h */,
+				69F20C0219EE71820010BAFC /* RWBaseParam.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		69FC69D219ED1E3000E902D8 /* Tool */ = {
@@ -1035,7 +1102,6 @@
 				6943907C19DEFE2600BE32BF /* AFHTTPRequestOperationManager.m in Sources */,
 				690A83A719EBB0F00042F74D /* MJRefreshFooterView.m in Sources */,
 				694390E719E1818800BE32BF /* MJArgument.m in Sources */,
-				69F20BDA19EE0EF30010BAFC /* RWHomeStatusesParam.m in Sources */,
 				6943907B19DEFE2600BE32BF /* AFHTTPRequestOperation.m in Sources */,
 				690A837D19E7FC730042F74D /* RWPhotoView.m in Sources */,
 				6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */,
@@ -1049,11 +1115,13 @@
 				694390E819E1818800BE32BF /* MJIvar.m in Sources */,
 				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
 				694390CF19E15EB800BE32BF /* RWStatus.m in Sources */,
+				69F20BE019EE5B690010BAFC /* RWUserTool.m in Sources */,
 				6908740419D56C3F00F2568F /* RWMessageViewController.m in Sources */,
 				694390C919E1244800BE32BF /* UIImage+GIF.m in Sources */,
 				694390C719E1244800BE32BF /* SDWebImagePrefetcher.m in Sources */,
 				690A839419E7FEBA0042F74D /* MJPhotoLoadingView.m in Sources */,
 				690A834F19E67A390042F74D /* RWStatusFrame.m in Sources */,
+				69F20BFC19EE67190010BAFC /* RWSendStatusParam.m in Sources */,
 				6943906019DE468100BE32BF /* RWPageControl.m in Sources */,
 				6943905D19DE36FD00BE32BF /* RWNewfeatureViewController.m in Sources */,
 				6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */,
@@ -1096,9 +1164,11 @@
 				6908740619D56C3F00F2568F /* RWAppDelegate.m in Sources */,
 				69006D4D19DD85A500B0CB4D /* RWSearchBar.m in Sources */,
 				690A83A519EBB0F00042F74D /* MJRefreshBaseView.m in Sources */,
+				69F20BEC19EE5C280010BAFC /* RWHomeStatusesParam.m in Sources */,
 				6908740C19D596EF00F2568F /* RWTabBar.m in Sources */,
 				690A834C19E565840042F74D /* RWStatusCell.m in Sources */,
 				6908740519D56C3F00F2568F /* main.m in Sources */,
+				69F20BF419EE5C320010BAFC /* RWUserInfoResult.m in Sources */,
 				6905140119EC032B00D9D23F /* RWTextView.m in Sources */,
 				694390D219E165F500BE32BF /* RWUser.m in Sources */,
 				6943907E19DEFE2600BE32BF /* AFNetworkReachabilityManager.m in Sources */,
@@ -1106,11 +1176,15 @@
 				6908740919D56EBB00F2568F /* UIImage+CY.m in Sources */,
 				690A839819E7FEBA0042F74D /* SDWebImageManager+MJ.m in Sources */,
 				694390CC19E1244800BE32BF /* UIImageView+WebCache.m in Sources */,
+				69F20C0319EE71820010BAFC /* RWBaseParam.m in Sources */,
 				690A839319E7FEBA0042F74D /* MJPhotoBrowser.m in Sources */,
 				694390EB19E1818800BE32BF /* MJType.m in Sources */,
+				69F20BFF19EE6BB50010BAFC /* RWSendStatusResult.m in Sources */,
 				690A839619E7FEBA0042F74D /* MJPhotoToolbar.m in Sources */,
+				69F20BF319EE5C320010BAFC /* RWUserInfoParam.m in Sources */,
 				694390C119E1244800BE32BF /* SDImageCache.m in Sources */,
 				690A837419E77C060042F74D /* RWReweetStatusView.m in Sources */,
+				69F20BED19EE5C280010BAFC /* RWHomeStatusesResult.m in Sources */,
 				690A83A619EBB0F00042F74D /* MJRefreshConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

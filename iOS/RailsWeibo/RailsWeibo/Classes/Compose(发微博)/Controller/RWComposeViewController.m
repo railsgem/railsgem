@@ -13,6 +13,8 @@
 #import "MBProgressHUD+MJ.h"
 #import "RWComposeToolbar.h"
 #import "RWComposePhotosView.h"
+#import "RWUserTool.h"
+#import "RWStatusTool.h"
 
 @interface RWComposeViewController () <UITextViewDelegate, RWComposeToolbarDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic,weak) RWTextView *textView;
@@ -244,7 +246,6 @@
     // 2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"status"] = self.textView.text;
-    params[@"access_token"] = [RWAccountTool account].access_token;
     
     // 2.封装文件参数
     NSMutableArray *formDataArray = [NSMutableArray array];
@@ -273,18 +274,17 @@
  */
 -(void)sendWithoutImage
 {
+    // 1.封装请求参数
+    RWSendStatusParam *param = [RWSendStatusParam param];
+    param.status = self.textView.text;
     
-    // 封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"status"] = self.textView.text;
-    params[@"access_token"] = [RWAccountTool account].access_token;
-    
-    // 发送请求
-    [RWHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id json) {
+    // 2.发送请求
+    [RWStatusTool sendStatusWithParam:param success:^(RWSendStatusResult *result) {
         [MBProgressHUD showSuccess:@"发送成功"];
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
     }];
-    
+
+
 }
 @end
