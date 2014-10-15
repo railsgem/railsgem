@@ -19,6 +19,8 @@
 #import "RWStatusFrame.h"
 #import "RWStatusCell.h"
 #import "MJRefresh.h"
+#import "RWStatusTool.h"
+#import "RWHomeStatusesParam.h"
 
 #define RWTitleButtonDownTag 0
 #define RWTitleButtonUpTag -1
@@ -124,19 +126,18 @@
 {
     
     // 1.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [RWAccountTool account].access_token;
-    params[@"count"] = @10;
+    RWHomeStatusesParam *param = [[RWHomeStatusesParam alloc] init];
+    param.access_token = [RWAccountTool account].access_token;
+    param.count = 10;
     
     if (self.statusFrames.count) {
         RWStatusFrame *statusFrame = [self.statusFrames lastObject];
         // 加载ID比since_id大的微博
-        long long maxId = [statusFrame.status.idstr longLongValue] -1 ;
-        params[@"max_id"] = @(maxId);
+        param.max_id = [statusFrame.status.idstr longLongValue] -1 ;
     }
     
     // 2.发送请求
-    [RWHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
+    [RWStatusTool homeStatusesWithParam:param success:^(id json) {
         // 将字典数组转为模型数组(里面放的就是RWStatus模型)
         NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
@@ -167,18 +168,18 @@
 {
     // 刷新数据（向新浪获取更新的数据）
     // 1.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [RWAccountTool account].access_token;
-    params[@"count"] = @10;
+    RWHomeStatusesParam *param = [[RWHomeStatusesParam alloc] init];
+    param.access_token = [RWAccountTool account].access_token;
+    param.count = 10;
     
     if (self.statusFrames.count) {
         RWStatusFrame *statusFrame = self.statusFrames[0];
         // 加载ID比since_id大的微博
-        params[@"since_id"] = statusFrame.status.idstr;
+        param.since_id = [statusFrame.status.idstr longLongValue];
     }
     
     // 发送请求
-    [RWHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
+    [RWStatusTool homeStatusesWithParam:param success:^(id json) {
         // 将字典数组转为模型数组(里面放的就是RWStatus模型)
         NSArray *statusArray = [RWStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
@@ -196,7 +197,6 @@
         [tempArray addObjectsFromArray:statusFrameArray];
         [tempArray addObjectsFromArray:self.statusFrames];
         self.statusFrames = tempArray;
-        
         
         // 刷新表格
         [self.tableView reloadData];

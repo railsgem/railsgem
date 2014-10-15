@@ -102,6 +102,8 @@
 		6970958A19D798C000D3A2F9 /* RWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958919D798C000D3A2F9 /* RWTabBarButton.m */; };
 		6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */; };
 		6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970958F19DA954000D3A2F9 /* RWNavigationController.m */; };
+		69F20BD719EE09F00010BAFC /* RWStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BD619EE09F00010BAFC /* RWStatusTool.m */; };
+		69F20BDA19EE0EF30010BAFC /* RWHomeStatusesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F20BD919EE0EF30010BAFC /* RWHomeStatusesParam.m */; };
 		69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F345C819ECF76000783FC8 /* RWComposeToolbar.m */; };
 		69FC69D119ED12AD00E902D8 /* RWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D019ED12AD00E902D8 /* RWComposePhotosView.m */; };
 		69FC69D519ED1E4D00E902D8 /* RWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC69D419ED1E4D00E902D8 /* RWHttpTool.m */; };
@@ -299,6 +301,10 @@
 		6970958C19D999AC00D3A2F9 /* RWBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBadgeButton.m; sourceTree = "<group>"; };
 		6970958E19DA954000D3A2F9 /* RWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNavigationController.h; sourceTree = "<group>"; };
 		6970958F19DA954000D3A2F9 /* RWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNavigationController.m; sourceTree = "<group>"; };
+		69F20BD519EE09F00010BAFC /* RWStatusTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWStatusTool.h; sourceTree = "<group>"; };
+		69F20BD619EE09F00010BAFC /* RWStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWStatusTool.m; sourceTree = "<group>"; };
+		69F20BD819EE0EF30010BAFC /* RWHomeStatusesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHomeStatusesParam.h; sourceTree = "<group>"; };
+		69F20BD919EE0EF30010BAFC /* RWHomeStatusesParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHomeStatusesParam.m; sourceTree = "<group>"; };
 		69F345C719ECF76000783FC8 /* RWComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposeToolbar.h; sourceTree = "<group>"; };
 		69F345C819ECF76000783FC8 /* RWComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWComposeToolbar.m; sourceTree = "<group>"; };
 		69FC69CF19ED12AD00E902D8 /* RWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWComposePhotosView.h; sourceTree = "<group>"; };
@@ -486,6 +492,7 @@
 		690873DF19D56C3F00F2568F /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				69F20BD419EE09C40010BAFC /* Tool */,
 				690873E019D56C3F00F2568F /* Controller */,
 				690873E519D56C3F00F2568F /* Model */,
 				690873E619D56C3F00F2568F /* View */,
@@ -513,6 +520,8 @@
 				690A834E19E67A390042F74D /* RWStatusFrame.m */,
 				690A835019E777750042F74D /* RWPhoto.h */,
 				690A835119E777750042F74D /* RWPhoto.m */,
+				69F20BD819EE0EF30010BAFC /* RWHomeStatusesParam.h */,
+				69F20BD919EE0EF30010BAFC /* RWHomeStatusesParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -899,6 +908,15 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		69F20BD419EE09C40010BAFC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				69F20BD519EE09F00010BAFC /* RWStatusTool.h */,
+				69F20BD619EE09F00010BAFC /* RWStatusTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		69FC69D219ED1E3000E902D8 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1035,7 @@
 				6943907C19DEFE2600BE32BF /* AFHTTPRequestOperationManager.m in Sources */,
 				690A83A719EBB0F00042F74D /* MJRefreshFooterView.m in Sources */,
 				694390E719E1818800BE32BF /* MJArgument.m in Sources */,
+				69F20BDA19EE0EF30010BAFC /* RWHomeStatusesParam.m in Sources */,
 				6943907B19DEFE2600BE32BF /* AFHTTPRequestOperation.m in Sources */,
 				690A837D19E7FC730042F74D /* RWPhotoView.m in Sources */,
 				6970959019DA954000D3A2F9 /* RWNavigationController.m in Sources */,
@@ -1025,6 +1044,7 @@
 				690A838019E7FD4A0042F74D /* RWPhotosView.m in Sources */,
 				694390C819E1244800BE32BF /* UIButton+WebCache.m in Sources */,
 				6970958D19D999AC00D3A2F9 /* RWBadgeButton.m in Sources */,
+				69F20BD719EE09F00010BAFC /* RWStatusTool.m in Sources */,
 				69F345C919ECF76000783FC8 /* RWComposeToolbar.m in Sources */,
 				694390E819E1818800BE32BF /* MJIvar.m in Sources */,
 				6908740119D56C3F00F2568F /* RWHomeViewController.m in Sources */,
