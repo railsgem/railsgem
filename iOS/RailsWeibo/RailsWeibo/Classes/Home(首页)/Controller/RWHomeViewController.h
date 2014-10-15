@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RWHomeViewController : UITableViewController
-
+-(void)refresh;
 @end

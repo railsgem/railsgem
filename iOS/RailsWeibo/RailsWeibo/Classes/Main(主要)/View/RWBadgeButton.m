@@ -29,7 +29,7 @@
 #warning copy
     _badgeValue = [badgeValue copy];
     //设置提醒数字
-    if (badgeValue) {
+    if (badgeValue && [badgeValue intValue] != 0) {
         self.hidden = NO;
         //设置文字
         [self setTitle:badgeValue forState:UIControlStateNormal];

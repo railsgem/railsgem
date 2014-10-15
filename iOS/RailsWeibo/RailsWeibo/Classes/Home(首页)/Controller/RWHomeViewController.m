@@ -117,6 +117,13 @@
     }
 }
 
+-(void)refresh
+{
+    if ([self.tabBarItem.badgeValue intValue] != 0) {
+        [self.header beginRefreshing];
+    }
+}
+
 /**
  *  发送请求加载更多的微博数据
  */
@@ -161,6 +168,9 @@
 
 -(void)loadNewData
 {
+    // 0.清除提醒数字
+    self.tabBarItem.badgeValue = nil;
+    
     // 刷新数据（向新浪获取更新的数据）
     // 1.封装请求参数
     RWHomeStatusesParam *param = [[RWHomeStatusesParam alloc] init];

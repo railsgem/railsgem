@@ -15,6 +15,9 @@
 #import "UIImage+CY.h"
 #import "RWTabBar.h"
 #import "RWComposeViewController.h"
+#import "RWUserTool.h"
+#import "RWAccount.h"
+#import "RWAccountTool.h"
 
 
 @interface RWTabBarViewController ()<RWTabBarDelegate>
@@ -22,9 +25,17 @@
  *  自定义的Tabbar
  */
 @property (nonatomic,weak)RWTabBar *customTabBar;
+@property (nonatomic, strong) RWHomeViewController *home;
+@property (nonatomic, strong) RWMessageViewController *message;
+// 3.广场
+@property (nonatomic, strong) RWDiscoverViewController *discover;
+// 4.我
+@property (nonatomic, strong) RWMeViewController *me;
 @end
 
+
 @implementation RWTabBarViewController
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,7 +46,32 @@
     //初始化所有的子控制器
     [self setupAllChildViewControllers];
     
+    // 定时检查未读数
+//    [self checkUnreadCount];
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
 
+}
+
+/**
+ *  定时检查未读数
+ */
+-(void)checkUnreadCount
+{    
+    // 1.请求参数
+    RWUserUnreadCountParam *param = [[RWUserUnreadCountParam alloc] init];
+    param.uid = @([RWAccountTool account].uid);
+    
+    // 2.发送请求
+    [RWUserTool userUnreadCountWithParam:param success:^(RWUserUnreadCountResult *result) {
+        
+        self.home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.status];
+        
+        self.message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.messageCount];
+        
+        self.me.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.follower];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -81,6 +117,10 @@
 -(void)tabBar:(RWTabBar *)tabBar didSelectedButtonForm:(int)from to:(int)to
 {
     self.selectedIndex = to;
+    
+    if (to == 0) {
+        [self.home refresh];
+    }
 }
 
 /**
@@ -103,18 +143,22 @@
     //首页
     RWHomeViewController *home = [[RWHomeViewController alloc] init];
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
+    self.home = home;
     
     //消息
     RWMessageViewController *message = [[RWMessageViewController alloc] init];
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
+    self.message = message;
     
     //广场
     RWDiscoverViewController *discover = [[RWDiscoverViewController alloc] init];
     [self setupChildViewController:discover title:@"广场" imageName:@"tabbar_discover" selectedImageName:@"tabbar_discover_selected"];
+    self.discover = discover;
     
     //我
     RWMeViewController *me = [[RWMeViewController alloc] init];
     [self setupChildViewController:me title:@"我" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
+    self.me = me;
     
 }
 
