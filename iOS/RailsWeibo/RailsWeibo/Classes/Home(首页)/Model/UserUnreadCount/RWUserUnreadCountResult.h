@@ -44,4 +44,8 @@
  */
 - (int)messageCount;
 
+/**
+ *  总数
+ */
+- (int)count;
 @end

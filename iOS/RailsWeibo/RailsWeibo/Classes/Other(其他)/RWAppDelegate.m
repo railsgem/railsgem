@@ -41,8 +41,12 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // 在后台开启任务让程序持续保持运行（能保持运行的时间是不确定）
+    [application beginBackgroundTaskWithExpirationHandler:^{
+        
+    }];
+    
+    // 定时提醒，定时弹框
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
