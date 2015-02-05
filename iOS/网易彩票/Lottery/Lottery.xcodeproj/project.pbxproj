@@ -16,6 +16,11 @@
 		69B641881A83458400A707F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641851A83458400A707F9 /* main.m */; };
 		69B6418B1A83462100A707F9 /* CPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B6418A1A83462100A707F9 /* CPTabBarController.m */; };
 		69B641901A8359CA00A707F9 /* CPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B6418F1A8359CA00A707F9 /* CPTabBar.m */; };
+		69B641E21A8367DA00A707F9 /* CPAwardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641D11A8367DA00A707F9 /* CPAwardInfoViewController.m */; };
+		69B641E31A8367DA00A707F9 /* CPHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641D51A8367DA00A707F9 /* CPHallViewController.m */; };
+		69B641E41A8367DA00A707F9 /* CPLuckyNumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641D91A8367DA00A707F9 /* CPLuckyNumViewController.m */; };
+		69B641E51A8367DA00A707F9 /* CPMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641DD1A8367DA00A707F9 /* CPMineViewController.m */; };
+		69B641E61A8367DA00A707F9 /* CPUnionBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641E11A8367DA00A707F9 /* CPUnionBuyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,16 @@
 		69B6418C1A83482400A707F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		69B6418E1A8359CA00A707F9 /* CPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTabBar.h; sourceTree = "<group>"; };
 		69B6418F1A8359CA00A707F9 /* CPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTabBar.m; sourceTree = "<group>"; };
+		69B641D01A8367DA00A707F9 /* CPAwardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAwardInfoViewController.h; sourceTree = "<group>"; };
+		69B641D11A8367DA00A707F9 /* CPAwardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAwardInfoViewController.m; sourceTree = "<group>"; };
+		69B641D41A8367DA00A707F9 /* CPHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPHallViewController.h; sourceTree = "<group>"; };
+		69B641D51A8367DA00A707F9 /* CPHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPHallViewController.m; sourceTree = "<group>"; };
+		69B641D81A8367DA00A707F9 /* CPLuckyNumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLuckyNumViewController.h; sourceTree = "<group>"; };
+		69B641D91A8367DA00A707F9 /* CPLuckyNumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLuckyNumViewController.m; sourceTree = "<group>"; };
+		69B641DC1A8367DA00A707F9 /* CPMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMineViewController.h; sourceTree = "<group>"; };
+		69B641DD1A8367DA00A707F9 /* CPMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMineViewController.m; sourceTree = "<group>"; };
+		69B641E01A8367DA00A707F9 /* CPUnionBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUnionBuyViewController.h; sourceTree = "<group>"; };
+		69B641E11A8367DA00A707F9 /* CPUnionBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUnionBuyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +137,11 @@
 		69B6417E1A83458400A707F9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69B641CE1A8367DA00A707F9 /* AwardInfo(开奖信息) */,
+				69B641D21A8367DA00A707F9 /* Hall(购彩大厅) */,
+				69B641D61A8367DA00A707F9 /* LuckyNum(幸运选号) */,
+				69B641DA1A8367DA00A707F9 /* Mine(我的彩票) */,
+				69B641DE1A8367DA00A707F9 /* UnionBuy(合买跟单) */,
 				69B6417F1A83458400A707F9 /* Main */,
 				69B641811A83458400A707F9 /* Other */,
 			);
@@ -165,6 +185,91 @@
 				69B6418F1A8359CA00A707F9 /* CPTabBar.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		69B641CE1A8367DA00A707F9 /* AwardInfo(开奖信息) */ = {
+			isa = PBXGroup;
+			children = (
+				69B641CF1A8367DA00A707F9 /* Controller */,
+			);
+			path = "AwardInfo(开奖信息)";
+			sourceTree = "<group>";
+		};
+		69B641CF1A8367DA00A707F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B641D01A8367DA00A707F9 /* CPAwardInfoViewController.h */,
+				69B641D11A8367DA00A707F9 /* CPAwardInfoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69B641D21A8367DA00A707F9 /* Hall(购彩大厅) */ = {
+			isa = PBXGroup;
+			children = (
+				69B641D31A8367DA00A707F9 /* Controller */,
+			);
+			path = "Hall(购彩大厅)";
+			sourceTree = "<group>";
+		};
+		69B641D31A8367DA00A707F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B641D41A8367DA00A707F9 /* CPHallViewController.h */,
+				69B641D51A8367DA00A707F9 /* CPHallViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69B641D61A8367DA00A707F9 /* LuckyNum(幸运选号) */ = {
+			isa = PBXGroup;
+			children = (
+				69B641D71A8367DA00A707F9 /* Controller */,
+			);
+			path = "LuckyNum(幸运选号)";
+			sourceTree = "<group>";
+		};
+		69B641D71A8367DA00A707F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B641D81A8367DA00A707F9 /* CPLuckyNumViewController.h */,
+				69B641D91A8367DA00A707F9 /* CPLuckyNumViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69B641DA1A8367DA00A707F9 /* Mine(我的彩票) */ = {
+			isa = PBXGroup;
+			children = (
+				69B641DB1A8367DA00A707F9 /* Controller */,
+			);
+			path = "Mine(我的彩票)";
+			sourceTree = "<group>";
+		};
+		69B641DB1A8367DA00A707F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B641DC1A8367DA00A707F9 /* CPMineViewController.h */,
+				69B641DD1A8367DA00A707F9 /* CPMineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69B641DE1A8367DA00A707F9 /* UnionBuy(合买跟单) */ = {
+			isa = PBXGroup;
+			children = (
+				69B641DF1A8367DA00A707F9 /* Controller */,
+			);
+			path = "UnionBuy(合买跟单)";
+			sourceTree = "<group>";
+		};
+		69B641DF1A8367DA00A707F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B641E01A8367DA00A707F9 /* CPUnionBuyViewController.h */,
+				69B641E11A8367DA00A707F9 /* CPUnionBuyViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +373,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B641E31A8367DA00A707F9 /* CPHallViewController.m in Sources */,
 				69B641901A8359CA00A707F9 /* CPTabBar.m in Sources */,
 				69B641881A83458400A707F9 /* main.m in Sources */,
+				69B641E41A8367DA00A707F9 /* CPLuckyNumViewController.m in Sources */,
 				69B641861A83458400A707F9 /* AppDelegate.m in Sources */,
+				69B641E61A8367DA00A707F9 /* CPUnionBuyViewController.m in Sources */,
+				69B641E21A8367DA00A707F9 /* CPAwardInfoViewController.m in Sources */,
+				69B641E51A8367DA00A707F9 /* CPMineViewController.m in Sources */,
 				69B6418B1A83462100A707F9 /* CPTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +582,7 @@
 				69B6417A1A83109D00A707F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69B6417B1A83109D00A707F9 /* Build configuration list for PBXNativeTarget "LotteryTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +591,7 @@
 				69B6417D1A83109D00A707F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
