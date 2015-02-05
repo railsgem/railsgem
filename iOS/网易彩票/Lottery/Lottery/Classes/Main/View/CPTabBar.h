@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CPTabBar.h
 //  Lottery
 //
 //  Created by Rails Chen on 15/2/5.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CPTabBar : UITabBar
 
 @end
-

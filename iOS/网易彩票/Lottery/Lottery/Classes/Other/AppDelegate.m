@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  Miss Nine
+//  Lottery
 //
-//  Created by Rails Chen on 15/1/20.
+//  Created by Rails Chen on 15/2/5.
 //  Copyright (c) 2015年 Railsgem. All rights reserved.
 //
 
@@ -16,7 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    application.statusBarHidden = NO;
     return YES;
 }
 

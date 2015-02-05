@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  Lottery
+//
+//  Created by Rails Chen on 15/2/5.
+//  Copyright (c) 2015年 Railsgem. All rights reserved.
+//
+
+#ifndef Lottery_PrefixHeader_pch
+#define Lottery_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 3.自定义Log
+#ifdef DEBUG
+#define RWLog(...) NSLog(__VA_ARGS__)
+#else
+#define RWLog(...)
+#endif
+
+#endif

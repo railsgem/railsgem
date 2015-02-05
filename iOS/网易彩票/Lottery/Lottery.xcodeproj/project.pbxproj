@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69B6415B1A83109D00A707F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B6415A1A83109D00A707F9 /* main.m */; };
-		69B6415E1A83109D00A707F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B6415D1A83109D00A707F9 /* AppDelegate.m */; };
-		69B641611A83109D00A707F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641601A83109D00A707F9 /* ViewController.m */; };
 		69B641641A83109D00A707F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B641621A83109D00A707F9 /* Main.storyboard */; };
 		69B641661A83109D00A707F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B641651A83109D00A707F9 /* Images.xcassets */; };
 		69B641691A83109D00A707F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B641671A83109D00A707F9 /* LaunchScreen.xib */; };
 		69B641751A83109D00A707F9 /* LotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641741A83109D00A707F9 /* LotteryTests.m */; };
+		69B641861A83458400A707F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641831A83458400A707F9 /* AppDelegate.m */; };
+		69B641871A83458400A707F9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69B641841A83458400A707F9 /* Info.plist */; };
+		69B641881A83458400A707F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B641851A83458400A707F9 /* main.m */; };
+		69B6418B1A83462100A707F9 /* CPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B6418A1A83462100A707F9 /* CPTabBarController.m */; };
+		69B641901A8359CA00A707F9 /* CPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B6418F1A8359CA00A707F9 /* CPTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,18 +30,21 @@
 
 /* Begin PBXFileReference section */
 		69B641551A83109D00A707F9 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		69B641591A83109D00A707F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69B6415A1A83109D00A707F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		69B6415C1A83109D00A707F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		69B6415D1A83109D00A707F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		69B6415F1A83109D00A707F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		69B641601A83109D00A707F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		69B641631A83109D00A707F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69B641651A83109D00A707F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69B641681A83109D00A707F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		69B6416E1A83109D00A707F9 /* LotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B641731A83109D00A707F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69B641741A83109D00A707F9 /* LotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryTests.m; sourceTree = "<group>"; };
+		69B641821A83458400A707F9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		69B641831A83458400A707F9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		69B641841A83458400A707F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B641851A83458400A707F9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69B641891A83462100A707F9 /* CPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTabBarController.h; sourceTree = "<group>"; };
+		69B6418A1A83462100A707F9 /* CPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTabBarController.m; sourceTree = "<group>"; };
+		69B6418C1A83482400A707F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		69B6418E1A8359CA00A707F9 /* CPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTabBar.h; sourceTree = "<group>"; };
+		69B6418F1A8359CA00A707F9 /* CPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +86,7 @@
 		69B641571A83109D00A707F9 /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
-				69B6415C1A83109D00A707F9 /* AppDelegate.h */,
-				69B6415D1A83109D00A707F9 /* AppDelegate.m */,
-				69B6415F1A83109D00A707F9 /* ViewController.h */,
-				69B641601A83109D00A707F9 /* ViewController.m */,
-				69B641621A83109D00A707F9 /* Main.storyboard */,
-				69B641651A83109D00A707F9 /* Images.xcassets */,
-				69B641671A83109D00A707F9 /* LaunchScreen.xib */,
+				69B6417E1A83458400A707F9 /* Classes */,
 				69B641581A83109D00A707F9 /* Supporting Files */,
 			);
 			path = Lottery;
@@ -96,8 +95,9 @@
 		69B641581A83109D00A707F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				69B641591A83109D00A707F9 /* Info.plist */,
-				69B6415A1A83109D00A707F9 /* main.m */,
+				69B641621A83109D00A707F9 /* Main.storyboard */,
+				69B641651A83109D00A707F9 /* Images.xcassets */,
+				69B641671A83109D00A707F9 /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +117,54 @@
 				69B641731A83109D00A707F9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69B6417E1A83458400A707F9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				69B6417F1A83458400A707F9 /* Main */,
+				69B641811A83458400A707F9 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		69B6417F1A83458400A707F9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				69B6418D1A83599D00A707F9 /* View */,
+				69B641801A83458400A707F9 /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		69B641801A83458400A707F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B641891A83462100A707F9 /* CPTabBarController.h */,
+				69B6418A1A83462100A707F9 /* CPTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69B641811A83458400A707F9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				69B641821A83458400A707F9 /* AppDelegate.h */,
+				69B641831A83458400A707F9 /* AppDelegate.m */,
+				69B641841A83458400A707F9 /* Info.plist */,
+				69B641851A83458400A707F9 /* main.m */,
+				69B6418C1A83482400A707F9 /* PrefixHeader.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		69B6418D1A83599D00A707F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69B6418E1A8359CA00A707F9 /* CPTabBar.h */,
+				69B6418F1A8359CA00A707F9 /* CPTabBar.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B641871A83458400A707F9 /* Info.plist in Resources */,
 				69B641641A83109D00A707F9 /* Main.storyboard in Resources */,
 				69B641691A83109D00A707F9 /* LaunchScreen.xib in Resources */,
 				69B641661A83109D00A707F9 /* Images.xcassets in Resources */,
@@ -219,9 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B641611A83109D00A707F9 /* ViewController.m in Sources */,
-				69B6415E1A83109D00A707F9 /* AppDelegate.m in Sources */,
-				69B6415B1A83109D00A707F9 /* main.m in Sources */,
+				69B641901A8359CA00A707F9 /* CPTabBar.m in Sources */,
+				69B641881A83458400A707F9 /* main.m in Sources */,
+				69B641861A83458400A707F9 /* AppDelegate.m in Sources */,
+				69B6418B1A83462100A707F9 /* CPTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +393,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Lottery/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = Lottery/Classes/Other/PrefixHeader.pch;
+				INFOPLIST_FILE = Lottery/Classes/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -353,9 +408,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Lottery/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = Lottery/Classes/Other/PrefixHeader.pch;
+				INFOPLIST_FILE = Lottery/Classes/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
